@@ -1,0 +1,155 @@
+.process-card {
+  height: 280px;
+  width: 100%;
+  position: relative;
+}
+
+.process-card .process-card-image {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  object-fit: cover;
+  border-radius: 5px;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0%, 0%);
+}
+
+.process-card .process-card-bg {
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  background: #41464d;
+  border-radius: 5px;
+  top: auto;
+  right: 0;
+  position: absolute;
+  transform: translate(0%, 0%);
+}
+
+.process-card .process-card-label {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #d69e4b;
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  z-index: 2;
+  border-radius: 5px 0 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.process-card .vertical-label {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%) translateX(50%) rotate(90deg);
+  transform-origin: center;
+  color: #ffffff;
+  font-size: 13px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.testimonial-mask {
+  background: #ffcf6a;
+  padding: 75px 40px 65px;
+  border-radius: 20px;
+  position: relative;
+  background: linear-gradient(90deg,
+      #FEC655 0%,
+      #FFF5D9 100%);
+  /* width: 420px;
+ height: 160px; */
+  /* clip-path: path("M12 0 H308 Q420 0 420 12 V60 Q420 70 308 70 Q288 80 308 90 Q420 90 420 100 V148 Q420 160 308 160 H12 Q0 160 0 148 V100 Q0 90 12 90 Q32 80 12 70 Q0 70 0 60 V12 Q0 0 12 0 Z"); */
+}
+
+
+.testimonial-mask .chakra-button {
+  background: transparent;
+  border-radius: 24px;
+}
+
+.testimonial-mask .chakra-button ::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 60px;
+  height: 90px;
+  background: #fff4d8;
+  /* background color */
+
+  border-top-right-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+@media (max-width: 440px) {
+  .strechable .image-large {
+    height: 330px !important;
+    width: 200px !important;
+  }
+
+  .strechable .image-large .image-instance {
+    width: calc(175px) !important;
+  }
+
+  .strechable .image-large .layer {
+    height: 314px !important;
+    width: 174px !important;
+  }
+}
+
+.scrollContainer {
+  min-width: auto !important;
+  padding: 10px;
+  background: transparent !important;
+  height: auto !important;
+}
+
+.logo-slider {
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  margin: auto;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 45s linear infinite;
+}
+
+.logo-track.reverse {
+  animation: scrollRight 45s linear infinite;
+}
+
+.logo-slider:hover .logo-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
