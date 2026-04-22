@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Banner from "../components/Banner";
 import model from "../images/projects/project_5.jpeg";
 import { useInView } from "react-intersection-observer";
@@ -21,7 +21,11 @@ import {
   Textarea,
   useToast,
   Spinner,
+  List,
+  ListItem,
+  ListIcon,
 } from "@chakra-ui/react";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
 import {
   FaFacebookF,
@@ -35,16 +39,27 @@ const Contact = () => {
   const lat = 28.4257225;
   const lng = 77.0577849;
   const mapSrc = `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
-
+  const { ref, inView } = useInView({
+    triggerOnce: true, // 👈 run only once
+    threshold: 0.3, // 👈 trigger when 30% visible
+  });
   const toast = useToast();
-
+  const fileRef = useRef(null);
   const [form, setForm] = useState({
     name: "",
+    company: "",
     email: "",
-    subject: "",
+    phone: "",
+    show: "",
+    stallSize: "",
     message: "",
   });
 
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    console.log("file", file);
+    setForm({ ...form, image: file });
+  };
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -86,6 +101,24 @@ const Contact = () => {
       });
       return false;
     }
+    if (!form.show) {
+      toast({
+        title: "Show Name is required",
+        status: "error",
+        position: "top",
+        duration: 2000,
+      });
+      return false;
+    }
+    if (!form.phone) {
+      toast({
+        title: "Phone Number is required",
+        status: "error",
+        position: "top",
+        duration: 2000,
+      });
+      return false;
+    }
 
     return true;
   };
@@ -95,8 +128,23 @@ const Contact = () => {
 
     try {
       setLoading(true);
+      const formattedMessage = `
+        Message: ${form.message}
+        Stall Size: ${form.stallSize}
+        Show: ${form.show}
+        Company: ${form.company}
+        Phone: ${form.phone}
+        `;
 
-      const res = await api.post("/api/contact", form);
+      const formData = new FormData();
+
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("subject", "New Inquiry");
+      formData.append("message", formattedMessage);
+      formData.append("image", form.image);
+
+      const res = await api.post("/api/contact", formData);
 
       if (res.data.success) {
         toast({
@@ -110,10 +158,17 @@ const Contact = () => {
 
         setForm({
           name: "",
+          company: "",
           email: "",
-          subject: "",
+          phone: "",
+          show: "",
+          stallSize: "",
           message: "",
         });
+        // ✅ Reset file input UI
+        if (fileRef.current) {
+          fileRef.current.value = null;
+        }
       }
     } catch (error) {
       toast({
@@ -136,38 +191,9 @@ const Contact = () => {
   return (
     <>
       {" "}
-      <Box pt="112px" pb={{ base: 10, md: 16 }} bg="#000">
-        <Container maxW="5xl">
-          <SimpleGrid
-            columns={{ base: 2, md: 4 }}
-            spacing={{ base: 8, md: 12 }}
-            maxW="1200px"
-            mx="auto"
-            px={6}
-            textAlign="center"
-          >
-            {stats.map((item, index) => (
-              <VStack key={index} spacing={1}>
-                <Text
-                  fontSize={{ base: "32px", md: "48px" }}
-                  fontWeight="700"
-                  color="white"
-                >
-                  <CountUp end={item.value} duration={2} />
-                  {item.suffix}
-                </Text>
-
-                <Text fontSize="md" color="gray.300" letterSpacing="0.5px">
-                  {item.label}
-                </Text>
-              </VStack>
-            ))}
-          </SimpleGrid>
-        </Container>
-      </Box>
       {/* git add . */}
       {/* <Banner heading="Contact Us" /> */}
-      <Box py={{ base: 12, md: 20 }}>
+      <Box pt="170px" pb={{ base: 12, md: 20 }}>
         <Container maxW="5xl">
           <Grid
             templateColumns={{ base: "1fr", md: "1.2fr 1fr" }}
@@ -181,42 +207,50 @@ const Contact = () => {
                 fontWeight="bold"
                 mb={6}
               >
-                Hi Let’s Talk!
+                Let’s Build Something Exceptional
               </Heading>
 
               <Text fontSize="md" color="gray.700" mb={6} lineHeight="1.8">
-                Mrs. India Supranational is a prestigious beauty pageant that
-                transcends conventional notions of beauty. It is a platform that
-                celebrates the multifaceted qualities of Indian women, from
-                their grace and elegance to their intellect and social
-                awareness. This pageant is not just about crowning a queen; it’s
-                about empowering women and advocating for positive change.
+                At FabriqExhibits, we are ready to bring your ideas to
+                life—whether it’s a global exhibition stall, a retail space, or
+                a complete brand environment. Get in touch with us to discuss
+                your requirements, and our team will connect with you shortly.
               </Text>
-
-              <Heading fontSize="lg" mb={4}>
+              <Heading fontSize="md" mt={5} mb={4}>
+                Our Offices
+              </Heading>
+              <VStack align="start" spacing={4}>
+                <HStack>
+                  <Icon as={MdLocationOn} color="orange.400" boxSize={5} />
+                  <Text fontSize="md" color="gray.700">
+                    <strong> India –</strong> T 17 tower c Baani Square sector
+                    50 Gurgaon, 122018
+                  </Text>
+                </HStack>
+                <HStack>
+                  <Icon as={MdLocationOn} color="orange.400" boxSize={5} />
+                  <Text fontSize="md" color="gray.700">
+                    <strong> Dubai –</strong> Ras Al Khor industrial area 2 P.O.
+                    Box 117318, Dubai UAE
+                  </Text>
+                </HStack>
+              </VStack>
+              <Heading fontSize="md" mt={5} mb={4}>
                 We’re here!
               </Heading>
 
               <VStack align="start" spacing={4}>
                 <HStack>
                   <Icon as={PhoneIcon} color="orange.400" boxSize={5} />
-                  <Text fontSize="lg" color="gray.700">
-                    9958137313
+                  <Text fontSize="md" color="gray.700">
+                    +91-9958137313
                   </Text>
                 </HStack>
 
                 <HStack>
                   <Icon as={EmailIcon} color="orange.400" boxSize={5} />
-                  <Text fontSize="lg" color="gray.700">
+                  <Text fontSize="md" color="gray.700">
                     Isha@fabriqexhibits.com
-                  </Text>
-                </HStack>
-
-                <HStack>
-                  <Icon as={MdLocationOn} color="orange.400" boxSize={5} />
-                  <Text fontSize="lg" color="gray.700">
-                    T-17, Tower C, Baani Square Sector 50, Gurugram – 122018
-                    Haryana, India
                   </Text>
                 </HStack>
               </VStack>
@@ -244,29 +278,46 @@ const Contact = () => {
           <Grid
             templateColumns={{ base: "1fr", md: "1fr 1fr" }}
             gap={{ base: 10, md: 16 }}
-            alignItems="center"
+            alignItems="start"
           >
             {/* Left Content */}
             <GridItem>
               <Heading
-                fontSize={{ base: "2xl", md: "3xl" }}
+                fontSize={{ base: "xl", md: "2xl" }}
                 mb={5}
                 fontWeight="600"
                 color="gray.800"
               >
-                Perfectly Designed Complete Wedding Packages!
+                At FabriqExhibits, we believe in delivering not just solutions,
+                but experiences that inspire and perform.
               </Heading>
 
-              <Text color="black" mb={8} lineHeight="1.7">
-                Unlock the allure of our perfectly designed complete wedding
-                packages! Tailored with elegance, our offerings promise a
-                seamless celebration. Contact us today to turn your dream
-                wedding into a masterpiece of love and culture.
-              </Text>
+              <Box maxW="600px" mx="auto" py={6}>
+                <Text fontSize="xl" fontWeight="bold" mb={4}>
+                  What Happens Next?
+                </Text>
 
-              <Text fontWeight="600" mb={4}>
-                Follow Us:
-              </Text>
+                <List spacing={3}>
+                  <ListItem display="flex" alignItems="center">
+                    <ListIcon as={CheckCircleIcon} color="green.500" />
+                    <Text fontSize="md">Our team reviews your requirement</Text>
+                  </ListItem>
+
+                  <ListItem display="flex" alignItems="center">
+                    <ListIcon as={CheckCircleIcon} color="green.500" />
+                    <Text fontSize="md">
+                      We connect with you within 24 hours
+                    </Text>
+                  </ListItem>
+
+                  <ListItem display="flex" alignItems="center">
+                    <ListIcon as={CheckCircleIcon} color="green.500" />
+                    <Text fontSize="md">
+                      A customized proposal and concept approach is shared
+                    </Text>
+                  </ListItem>
+                </List>
+              </Box>
 
               <HStack display={"none"} spacing={4}>
                 <Box
@@ -325,54 +376,113 @@ const Contact = () => {
 
             {/* Right Form */}
             <GridItem>
+              <Heading
+                fontSize={{ base: "xl", md: "2xl" }}
+                mb={5}
+                fontWeight="600"
+                color="gray.800"
+              >
+                Please Tell Us About Your Requirement
+              </Heading>
+
               <VStack spacing={4}>
                 <Input
-                  placeholder="Your Name"
+                  placeholder="Full Name *"
                   bg="white"
                   name="name"
                   value={form.name}
                   onChange={handleChange}
                 />
                 <Input
-                  placeholder="Mobile number"
-                  rows={5}
+                  placeholder="Company Name *"
                   bg="white"
-                  name="message"
-                  value={form.message}
+                  name="company"
+                  value={form.company}
                   onChange={handleChange}
                 />
                 <Input
-                  placeholder="Your Email"
+                  placeholder="Email Address*"
                   bg="white"
                   name="email"
                   value={form.email}
                   onChange={handleChange}
                 />
+                <Input
+                  placeholder="Phone Number*"
+                  rows={5}
+                  bg="white"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                />
 
                 <Input
-                  placeholder="Show name"
+                  placeholder="Show Name*"
                   bg="white"
-                  name="subject"
+                  name="show"
                   value={form.subject}
                   onChange={handleChange}
                 />
                 <Input
-                  placeholder="Stand Size"
+                  placeholder="Stall Size / Project Area"
+                  rows={5}
+                  bg="white"
+                  name="stallSize"
+                  value={form.stallSize}
+                  onChange={handleChange}
+                />
+
+                <Textarea
+                  placeholder="Your Requirement / Message*"
                   rows={5}
                   bg="white"
                   name="message"
                   value={form.message}
                   onChange={handleChange}
                 />
-
-                {/* <Textarea
-                  placeholder="Stand Size"
-                  rows={5}
+                <Box
+                  position="relative"
+                  border="1px solid"
+                  borderColor="gray.200"
+                  borderRadius="md"
+                  px={3}
+                  py={2}
                   bg="white"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                /> */}
+                  _hover={{ borderColor: "gray.300" }}
+                  _focusWithin={{
+                    borderColor: "blue.500",
+                    boxShadow: "0 0 0 1px #3182ce",
+                  }}
+                  w={"100%"}
+                >
+                  <Input
+                    padding={"6px"}
+                    type="file"
+                    name="image"
+                    onChange={handleImageUpload}
+                    accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg"
+                    bg="white"
+                    ref={fileRef}
+                    border={"none"}
+                  />
+                  {/* Custom Button */}
+                  <Button
+                    onClick={() => fileRef.current.click()}
+                    bg="#efefef"
+                    p="5px"
+                    position="absolute"
+                    left="10px"
+                    width={"100px"}
+                    top="49%"
+                    transform="translate(0%, -50%)"
+                    fontSize="12px"
+                    h="28px"
+                    border="1px solid #737171"
+                    borderRadius="3px"
+                  >
+                    File Upload
+                  </Button>
+                </Box>
 
                 <Button
                   variant="outline"
@@ -386,7 +496,7 @@ const Contact = () => {
                     color: "white",
                   }}
                 >
-                  {loading ? <Spinner size="sm" /> : "CONTACT NOW"}
+                  {loading ? <Spinner size="sm" /> : "SUBMIT"}
                 </Button>
               </VStack>
             </GridItem>
@@ -427,6 +537,39 @@ const Contact = () => {
           </VStack>
         </Container>
       </Box> */}
+      <Box ref={ref} py={{ base: 10, md: 16 }} bg="#000">
+        <Container maxW="5xl">
+          <SimpleGrid
+            columns={{ base: 2, md: 4 }}
+            spacing={{ base: 8, md: 12 }}
+            maxW="1200px"
+            mx="auto"
+            px={6}
+            textAlign="center"
+          >
+            {stats.map((item, index) => (
+              <VStack key={index} spacing={1}>
+                <Text
+                  fontSize={{ base: "32px", md: "48px" }}
+                  fontWeight="700"
+                  color="white"
+                >
+                  {inView && ( // 👈 only run when visible
+                    <>
+                      <CountUp end={item.value} duration={2} />
+                      {item.suffix}
+                    </>
+                  )}
+                </Text>
+
+                <Text fontSize="md" color="gray.300" letterSpacing="0.5px">
+                  {item.label}
+                </Text>
+              </VStack>
+            ))}
+          </SimpleGrid>
+        </Container>
+      </Box>
       <Box w="100%" h={{ base: "300px", md: "450px" }}>
         <iframe
           title="google-map"

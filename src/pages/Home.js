@@ -153,7 +153,7 @@ const Home = () => {
     </Flex>
   );
   const mediaItems = useSelector((s) => s.gallery.data);
-  const [mediaTag, setMediaTag] = useState("international");
+  const [mediaTag, setMediaTag] = useState("awards");
   const logos = [
     Logo_1,
     Logo_2,
@@ -486,6 +486,7 @@ const Home = () => {
       base: [0, 1, 2, 3, 4, 5, 6, 7],
       sm: [1, 3, 5, 6],
       md: [2, 5, 6],
+      lg: [3, 6],
     }) || [];
   return (
     <>
@@ -811,7 +812,7 @@ const Home = () => {
               as={Link}
               to="/gallery"
               color="black"
-              state={{ tag: "international" }}
+              state={{ tag: "awards" }}
               className=""
             >
               View All Gallery
@@ -1490,10 +1491,10 @@ const Home = () => {
             ))}
           </SimpleGrid>
           <Box maxW="1200px" mx="auto" py={10}>
-            <Flex wrap="wrap" justify="center" gap={20} position="relative">
+            <Flex wrap="wrap" justify="center" gap={10} position="relative">
               {steps.map((step, index) => {
-                const isLastInRow = index === 2; // Step 04
-                const isSecondRow = index >= 3;
+                const isLastInRow = index === 3; // Step 04
+                const isSecondRow = index >= 4;
 
                 return (
                   <Box
@@ -1508,8 +1509,8 @@ const Home = () => {
                       <Box
                         position="absolute"
                         top="50%"
-                        right="-90px"
-                        width="100px"
+                        right="-50px"
+                        width="55px"
                         height="2px"
                         bg="gray.300"
                       />
@@ -1534,7 +1535,10 @@ const Home = () => {
                         textAlign="center"
                       >
                         <Text fontSize="lg">{step.icon}</Text>
-                        <Text fontSize="sm"> {step.title}</Text>
+                        <Text fontSize="sm" fontWeight={"700"}>
+                          {" "}
+                          {step.title}
+                        </Text>
                       </Flex>
 
                       {/* Bottom Gradient */}
