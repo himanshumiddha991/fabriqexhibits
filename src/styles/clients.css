@@ -7,11 +7,17 @@
 .logo-track {
  display: flex;
  width: max-content;
- animation: scrollLeft 45s linear infinite;
+ animation: scrollLeft 40s linear infinite;
+}
+
+@media (max-width: 768px) {
+ .logo-track {
+  animation: scrollLeft 15s linear infinite;
+ }
 }
 
 .logo-track.reverse {
- animation: scrollRight 45s linear infinite;
+ animation: scrollRight 40s linear infinite;
 }
 
 .logo-slider:hover .logo-track {
