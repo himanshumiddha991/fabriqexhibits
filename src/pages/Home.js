@@ -551,9 +551,7 @@ const Home = () => {
               Custom Exhibition Stand Builders & Fabricators
             </FadeHeading>
             <p className="hero-desc" fontSize={"16px"}>
-              Welcome to FabriqExhibits — India’s acclaimed exhibition design
-              and fabrication company, creating world-class brand environments
-              across the globe.
+              Welcome to FabriqExhibits — India’s acclaimed exhibition stall building and fabrication company, creating world-class brand environments across the globe.
             </p>
 
             <Stack
@@ -768,8 +766,7 @@ const Home = () => {
             m={"auto"}
             width={{ base: "100%", md: "60%" }}
           >
-            Discover how we bring your vision to life through thoughtful design
-            and precise execution, recognized globally.
+            Discover how we redefine excellence with elite designs and flawless execution.
           </Text>
           {/* <HStack
             spacing={4}
@@ -1135,17 +1132,7 @@ const Home = () => {
               >
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
-                    FabriqExhibits is a design-driven exhibition and interior
-                    solutions company with over a decade of industry experience.
-                    We specialize in custom stall design and fabrication, retail
-                    & office interiors, and graphic design — offering end-to-end
-                    solutions that ensure your brand commands attention. We have
-                    successfully delivered projects across the globe and are
-                    recognized as one of the top exhibition stall design and
-                    fabrication companies in India. With a global footprint and
-                    a reputation for creative excellence, we invite you to
-                    partner with us to transform your vision into a physical
-                    landmark.
+                    FabriqExhibits is a design-driven exhibition and interior solutions company with 15+ years of industry experience. We specialize in custom stall design and fabrication, retail & office interiors, and graphic design — offering end-to-end solutions that ensure your brand commands attention. Our approach is simple yet powerful: Think -----> Design -----> Build -----> Deliver. By merging creativity with technical precision, we transform ambitious visions into high-impact physical landmarks. We are recognized as a leader in India with a global footprint and invite you to partner with us to create engaging spaces that elevate your brand and captivate audiences.
                   </Text>
 
                   <Text fontSize={"18px"} fontWeight="700">
@@ -1226,10 +1213,9 @@ const Home = () => {
               {/* Intro */}
               <Text fontSize="lg" mb={8}>
                 <Text as="span" color="var(--color-primary)" fontWeight="bold">
-                  Fabriq Exhibits
+                  Choose us
                 </Text>{" "}
-                Choose us for our unwavering reliability for seamless,
-                world-class execution and total brand peace.
+                for our unwavering reliability for seamless, world-class execution and total brand peace.
               </Text>
 
               {/* Features Card */}
@@ -1439,9 +1425,9 @@ const Home = () => {
           {/* Heading Section */}
           <VStack spacing={3} mb={14} textAlign="center">
             <FadeHeading textAlign={"center"} letterSpacing="1px">
-              From Idea to Impact — Seamlessly Delivered{" "}
+              From Idea to Impact — {" "}
               <Text as="span" color="var(--color-primary)">
-                Delivered
+                Seamlessly Delivered
               </Text>{" "}
             </FadeHeading>
             <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>

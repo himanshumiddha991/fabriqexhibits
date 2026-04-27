@@ -11,8 +11,10 @@ import {
   Image,
   Button,
   useDisclosure,
+  Heading,
 } from "@chakra-ui/react";
 import BannerBg from "../images/banner/2.jpg";
+import { Helmet } from "react-helmet-async";
 const Portfolio = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -96,7 +98,33 @@ const Portfolio = () => {
   }, [imageGallery, visibleCount]);
   return (
     <>
-      <Banner heading="Portfolio" BannerBg={BannerBg} />
+      <Banner  subheading="Excellence in every detail" heading="Portfolio" caption="Builds that command attention" BannerBg={BannerBg} />
+  
+      <Box p="40px" w={{ base: "100%", md: "70%" }} mx="auto">
+              <Heading as="h1" mb={4} textAlign="center">
+            Our Curated Gallery of Design Excellence
+              </Heading>
+              
+              <Box
+                className="blog-description"
+                mt={10}
+             
+              />
+
+
+
+
+               <p className="" fontSize={"16px"}>
+            
+          Discover a curated collection of our exhibition stalls, retail interiors and graphic design projects for leading brands across India and international markets.
+Every design is a reflection of our experience, developed over 15 years, blending the deep-rooted experience with technical expertise. From the initial idea to project completion, we emphasize a legacy of quality and execution excellence so every project becomes a physical landmark for your brand. 
+
+            
+            
+
+            </p>
+            </Box>
+          
       <Box py={20} px={8}>
         <HStack spacing={4} pb={10} justifyContent={"center"} wrap="wrap">
           <Button
