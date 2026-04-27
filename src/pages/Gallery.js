@@ -106,6 +106,8 @@ const Gallery = () => {
               <option value="international">International</option>
               <option value="awards">Awards</option>
               <option value="portfolio">Portfolio</option>
+              <option value="countries">Clients</option>
+              <option value="showcasing-stands">Showcasing Stands</option>
             </Select>
           </Box>
           {loading ? <Spinner size="xl" /> : <MediaMosaic items={gallery} />}

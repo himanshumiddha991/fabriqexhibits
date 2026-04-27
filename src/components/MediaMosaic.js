@@ -16,7 +16,6 @@ function MediaMasonry({ items, tag, ShowTitle = true }) {
   const heights = [220, 220, 220, 220, 220, 220];
 
   const openMedia = (item) => {
-    console.log("item", item);
     setSelectedMedia({
       type: item?.media?.file_type,
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
@@ -36,7 +35,6 @@ function MediaMasonry({ items, tag, ShowTitle = true }) {
     md: media, // 🖥 show all items
   });
 
-  console.log("media", items, tag, media);
   return (
     <>
       {/* Masonry container */}

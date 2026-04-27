@@ -24,7 +24,6 @@ function ExpandableCardsGroup({
     });
     onOpen();
   };
-  console.log("cards", cards);
   return (
     <Box
       display={{ base: "grid" }}

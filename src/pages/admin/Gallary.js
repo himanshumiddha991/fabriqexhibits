@@ -183,7 +183,11 @@ const Gallery = () => {
                         </Box>
 
                         <Flex direction="column" p="3" gap="2">
-                          <Text fontWeight="600">{item?.tags}</Text>
+                          <Text fontWeight="600">
+                            {item?.tags === "countries"
+                              ? "clients"
+                              : item?.tags}
+                          </Text>
 
                           <Flex gap={3} pt={3}>
                             <Button

@@ -344,7 +344,7 @@ const Clients = () => {
               {col.map((item, i) => (
                 <Box
                   position={"relative"}
-                  w={{ base: "125px", md: "400px" }}
+                  w={{ base: "300px", md: "400px" }}
                   mb="24px"
                   H="300px"
                   border="3px solid #deb129"

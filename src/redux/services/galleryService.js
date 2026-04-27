@@ -10,25 +10,29 @@ export const loadGalleryWithCache = () => async (dispatch) => {
 
     if (cache) {
       const parsed = JSON.parse(cache);
+      const now = Date.now();
+      const expiry = Number(parsed.expiry);
 
-      // ⭐ load immediately
-      dispatch(setGallery(parsed.data));
+      console.log("NOW:", now);
+      console.log("EXPIRY:", expiry);
 
-      // ⭐ If cache expired → silent refresh
-      if (Date.now() > parsed.expiry) {
-        console.log("test", Date.now(), parsed.expiry);
+      // ✅ check expiry FIRST
+      if (!isNaN(expiry) && now > expiry) {
+        console.log("EXPIRED → silent refresh");
         dispatch(fetchGallerySilent());
       }
+
+      // ✅ then load cached data
+      dispatch(setGallery(parsed.data));
+
       return;
     }
 
-    // ⭐ expired or not found
     dispatch(fetchGallery());
   } catch (err) {
     dispatch(fetchGallery());
   }
 };
-
 export const fetchGallery = () => async (dispatch) => {
   try {
     dispatch(setGalleryLoading(true));
