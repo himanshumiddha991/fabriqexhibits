@@ -33,12 +33,12 @@ const Banner = ({
         px={4}
       >
         {/* Decorative Icon */}
-        <Image
-          src={Ornament} // optional decorative svg
+        {/* <Image
+          src={Ornament} 
           alt="ornament"
           maxW="120px"
           mb={2}
-        />
+        /> */}
 
         <Text
           color="whiteAlpha.900"

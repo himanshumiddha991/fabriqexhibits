@@ -173,11 +173,7 @@ const Career = () => {
               </FadeHeading>
 
               <Text fontSize="md" color="gray.700" mb={6} lineHeight="1.8">
-                FabriqExhibits operates as a design-based exhibition and
-                interior solutions company which has served the industry for
-                over ten years. Our company creates powerful brand spaces which
-                we develop through our creative design work and our exact
-                manufacturing capabilities and our smooth operational methods.
+              FabriqExhibits operates as a design-based exhibition and interior solutions company which has served the industry for over 15 years. Our company creates powerful brand spaces which we develop through our creative design work and our exact manufacturing capabilities and our smooth operational methods.
               </Text>
 
               <Heading fontSize="lg" mb={4}>
