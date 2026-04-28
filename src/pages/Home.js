@@ -394,11 +394,11 @@ const Home = () => {
     },
     {
       q: "Do you work on international projects?",
-      a: "Yes, we have executed multiple projects globally and have the capability to manage exhibition and interior projects across India, Dubai, and international markets.",
+      a: "Yes, we have executed multiple projects globally and have the capability to manage exhibition and interior projects across India and International markets",
     },
     {
       q: "How long have you been in the industry?",
-      a: "We have been in the market for more than a decade and have built a strong reputation through successful projects and long-term client relationships.",
+      a: "We have been in the industry for more than 15 years and have built a strong reputation through successful projects and long-term client relationships.",
     },
     {
       q: "Do you have manufacturing facilities?",
@@ -438,7 +438,7 @@ const Home = () => {
     },
     {
       q: "How can we get started with a project?",
-      a: "You can contact us with your brief, event details, and requirements. Our team will review your needs and propose the right design and execution approach.",
+      a: "You can contact us with your brief, Exhibition details, and requirements. Our team will review your needs and propose the right design and execution approach.",
     },
   ];
   const steps = [
@@ -551,7 +551,9 @@ const Home = () => {
               Custom Exhibition Stand Builders & Fabricators
             </FadeHeading>
             <p className="hero-desc" fontSize={"16px"}>
-              Welcome to FabriqExhibits — India’s acclaimed exhibition stall building and fabrication company, creating world-class brand environments across the globe.
+              Welcome to FabriqExhibits — India’s acclaimed exhibition stall
+              building and fabrication company, creating world-class brand
+              environments across the globe.
             </p>
 
             <Stack
@@ -766,7 +768,8 @@ const Home = () => {
             m={"auto"}
             width={{ base: "100%", md: "60%" }}
           >
-            Discover how we redefine excellence with elite designs and flawless execution.
+            Discover how we redefine excellence with elite designs and flawless
+            execution.
           </Text>
           {/* <HStack
             spacing={4}
@@ -1132,7 +1135,9 @@ const Home = () => {
               >
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
-                    FabriqExhibits is a design-driven exhibition and interior solutions company with 15+ years of industry experience. We specialize in custom stall design and fabrication, retail & office interiors, and graphic design — offering end-to-end solutions that ensure your brand commands attention. Our approach is simple yet powerful: Think -----> Design -----> Build -----> Deliver. By merging creativity with technical precision, we transform ambitious visions into high-impact physical landmarks. We are recognized as a leader in India with a global footprint and invite you to partner with us to create engaging spaces that elevate your brand and captivate audiences.
+                    {
+                      " FabriqExhibits is a design-driven exhibition and interior solutions company with 15+ years of industry experience. We specialize in custom stall design and fabrication, retail & office interiors, and graphic design — offering end-to-end solutions that ensure your brand commands attention. Our approach is simple yet powerful: Think -----> Design -----> Build -----> Deliver. By merging creativity with technical precision, we transform ambitious visions into high-impact physical landmarks. We are recognized as a leader in India with a global footprint and invite you to partner with us to create engaging spaces that elevate your brand and captivate audiences."
+                    }
                   </Text>
 
                   <Text fontSize={"18px"} fontWeight="700">
@@ -1215,7 +1220,8 @@ const Home = () => {
                 <Text as="span" color="var(--color-primary)" fontWeight="bold">
                   Choose us
                 </Text>{" "}
-                for our unwavering reliability for seamless, world-class execution and total brand peace.
+                for our unwavering reliability for seamless, world-class
+                execution and total brand peace.
               </Text>
 
               {/* Features Card */}
@@ -1425,7 +1431,7 @@ const Home = () => {
           {/* Heading Section */}
           <VStack spacing={3} mb={14} textAlign="center">
             <FadeHeading textAlign={"center"} letterSpacing="1px">
-              From Idea to Impact — {" "}
+              From Idea to Impact —{" "}
               <Text as="span" color="var(--color-primary)">
                 Seamlessly Delivered
               </Text>{" "}
