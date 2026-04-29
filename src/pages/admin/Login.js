@@ -6,11 +6,11 @@ import {
   Heading,
   Container,
 } from "@chakra-ui/react";
-
+import { store } from "../../redux/store";
 import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
-
+import { setToken } from "../../redux/authSlice";
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -38,7 +38,7 @@ const Login = () => {
       const token = res.data.token;
 
       login(token);
-
+      store.dispatch(setToken(token));
       navigate("/admin/home");
     } catch (error) {
       alert("Invalid credentials");

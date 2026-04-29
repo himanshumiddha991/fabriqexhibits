@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { HamburgerIcon } from "@chakra-ui/icons";
 const AdminLayout = () => {
   const token = localStorage.getItem("token");
-  const { onOpen } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   if (!token) {
     return <Navigate to="/login" replace />;
   }
@@ -13,7 +13,7 @@ const AdminLayout = () => {
     <>
       <Flex minH="100vh">
         {/* Optional Admin Header */}
-        <Sidebar />
+        <Sidebar isOpen={isOpen} onClose={onClose} />
         <Flex minH="100vh" width={"100%"}>
           {/* Main Content */}
           <Box flex="1">

@@ -13,12 +13,12 @@ export const loadGalleryWithCache = () => async (dispatch) => {
       const now = Date.now();
       const expiry = Number(parsed.expiry);
 
-      console.log("NOW:", now);
-      console.log("EXPIRY:", expiry);
+      // console.log("NOW:", now);
+      // console.log("EXPIRY:", expiry);
 
       // ✅ check expiry FIRST
       if (!isNaN(expiry) && now > expiry) {
-        console.log("EXPIRED → silent refresh");
+        // console.log("EXPIRED → silent refresh");
         dispatch(fetchGallerySilent());
       }
 
