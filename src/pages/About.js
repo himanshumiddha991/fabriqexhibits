@@ -84,17 +84,17 @@ const About = () => {
     {
       title: "Client First Approach",
       icon: "🤝",
-      desc: "We position your vision at the heart of our operations. Every endeavor is fueled by a profound immersion into your objectives, ensuring we engineer bespoke solutions that transcend traditional benchmarks and cultivate enduring institutional value.",
+      desc: "We place our clients at the center of everything we do. Every project is driven by a deep understanding of client needs, ensuring we deliver solutions that exceed expectations and create lasting value.",
     },
     {
       title: "Integrity & Transparency",
       icon: "🛡️",
-      desc: "We champion an ethos of unyielding honesty and ethical accountability. From preliminary discourse to definitive realization, we uphold absolute clarity, fortifying professional alliances through every verified commitment and transparent interaction.",
+      desc: "We believe in doing business with honesty and accountability. From initial discussions to final delivery, we maintain complete transparency, building trust through every interaction and commitment.",
     },
     {
-      title: "Meticulous Precision and Diligence",
+      title: "Diligence & Precision",
       icon: "🔍",
-      desc: "We treat every nuance with fastidious attention. Our unwavering dedication to rigor guarantees impeccable implementation, superior aesthetic outcomes, and absolute consistency throughout the entire lifecycle of conceptual design and structural realization.",
+      desc: "We approach every project with meticulous attention to detail. Our commitment to diligence ensures flawless execution, high-quality outcomes, and consistency across every stage of design and build.",
     },
     {
       title: "Excellence in Execution",
@@ -125,8 +125,8 @@ const About = () => {
     <div>
       <Banner
         heading="About Us"
-        subheading="Driving Global Impact"
-        caption="We Don’t Just Build Stalls — We Create Success Stories"
+        subheading="Designing Experiences. Building Global Impact."
+        caption="We don’t just build stalls—we create immersive brand experiences that turn into success stories across global platforms."
         BannerBg={BannerBg}
       />
       <Box py={{ base: 12, md: 20 }} bg="gray.50">
@@ -170,7 +170,7 @@ const About = () => {
               >
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
-                    FabricExhibits is a design-driven exhibition and interior
+                    FabriqExhibits is a design-driven exhibition and interior
                     solutions company. We have 15 + years of industry
                     experience. We specialize in creating an impactful brand
                     environment through innovative design, precision
