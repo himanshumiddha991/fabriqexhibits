@@ -123,7 +123,12 @@ const About = () => {
   const sliderColumns = [...columns, ...columns];
   return (
     <div>
-      <Banner heading="About Us" subheading ="Driving Global Impact" caption ="We Don’t Just Build Stalls — We Create Success Stories" BannerBg={BannerBg} />
+      <Banner
+        heading="About Us"
+        subheading="Driving Global Impact"
+        caption="We Don’t Just Build Stalls — We Create Success Stories"
+        BannerBg={BannerBg}
+      />
       <Box py={{ base: 12, md: 20 }} bg="gray.50">
         <Container maxW="5xl">
           {/* Heading */}
@@ -165,7 +170,11 @@ const About = () => {
               >
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
-                   FabricExhibits is a design-driven exhibition and interior solutions company. We have 15 years of industry experience. We specialize in creating an impactful brand environment through innovative design, precision fabrication, and seamless execution.
+                    FabricExhibits is a design-driven exhibition and interior
+                    solutions company. We have 15 + years of industry
+                    experience. We specialize in creating an impactful brand
+                    environment through innovative design, precision
+                    fabrication, and seamless execution.
                   </Text>
 
                   <Text fontSize={"25px"} fontWeight="800">
@@ -194,7 +203,15 @@ const About = () => {
             </GridItem>
           </Grid>
           <Text textAlign={"center"} pt={12} fontSize={"15px"}>
-           Welcome to FabriqExhibits, where we transform ideas into immersive brand experiences. We have successfully delivered 7000+ exhibition stalls and creative spaces across global markets. From developing a concept to delivering the output, we apply strong design thinking with flawless on-ground execution to create an impactful environment that elevates your brand. We foster a client-first approach and exceed their expectations through reliable timelines, fostering long-term relationships. At FabriqExhibits, we craft experiences that engage, inspire, and deliver real results.
+            Welcome to FabriqExhibits, where we transform ideas into immersive
+            brand experiences. We have successfully delivered 7000+ exhibition
+            stalls and creative spaces across global markets. From developing a
+            concept to delivering the output, we apply strong design thinking
+            with flawless on-ground execution to create an impactful environment
+            that elevates your brand. We foster a client-first approach and
+            exceed their expectations through reliable timelines, fostering
+            long-term relationships. At FabriqExhibits, we craft experiences
+            that engage, inspire, and deliver real results.
           </Text>
           <Grid
             templateColumns={{ base: "1fr", md: "1fr 1fr" }}
@@ -329,7 +346,15 @@ const About = () => {
 
               <Box bg="white" borderRadius="12px" p={5} boxShadow="sm">
                 <Text fontSize="md" color="black" lineHeight="1.8">
-We believe that an exhibition stall is more than just a structure — it’s your brand’s moment to shine. That’s why our mission is to turn your ideas into experiences that people actually remember. We are committed to serving you with dedication, upholding integrity, and executing every project with diligence and excellence - from the first concept to the final setup, so your brand doesn’t just show up, it truly stands out.                </Text>
+                  We believe that an exhibition stall is more than just a
+                  structure — it’s your brand’s moment to shine. That’s why our
+                  mission is to turn your ideas into experiences that people
+                  actually remember. We are committed to serving you with
+                  dedication, upholding integrity, and executing every project
+                  with diligence and excellence - from the first concept to the
+                  final setup, so your brand doesn’t just show up, it truly
+                  stands out.{" "}
+                </Text>
               </Box>
             </Box>
 
@@ -352,7 +377,12 @@ We believe that an exhibition stall is more than just a structure — it’s you
 
               <Box bg="white" borderRadius="12px" p={5} boxShadow="sm">
                 <Text fontSize="md" color="black" lineHeight="1.8">
-                 Our vision is to define the global benchmark for exhibition excellence through unmatched creativity and precision. We strive to create significant, immersive environments that do more than just showcase a brand. They resonate with audiences and leave a lasting emotional impact through innovative, personalized storytelling.
+                  Our vision is to define the global benchmark for exhibition
+                  excellence through unmatched creativity and precision. We
+                  strive to create significant, immersive environments that do
+                  more than just showcase a brand. They resonate with audiences
+                  and leave a lasting emotional impact through innovative,
+                  personalized storytelling.
                 </Text>
               </Box>
             </Box>

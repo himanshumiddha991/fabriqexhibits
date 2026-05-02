@@ -1,7 +1,8 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import api from "../../utils/api";
-
+import { store } from "../../redux/store";
+import { logout } from "../../redux/authSlice";
 export default function AdminLayout({ children }) {
   const [data, setData] = useState(null);
 
@@ -19,6 +20,7 @@ export default function AdminLayout({ children }) {
         setData(res.data);
       } catch (error) {
         console.error("API error:", error);
+        store.dispatch(logout());
       }
     };
 

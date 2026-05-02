@@ -149,8 +149,8 @@ const Career = () => {
       {" "}
       <Banner
         heading="Career"
-        subheading="Turning Dreams into Reality "
-        caption="Join Our Journey of Creations"
+        subheading=""
+        caption="Build Your Future With Us"
         BannerBg={BannerBg}
       />
       <Box py={{ base: 12, md: 20 }}>
@@ -232,15 +232,12 @@ const Career = () => {
               <VStack spacing={4} textAlign="center" mb={12}>
                 <Heading size="xl">🌟 Our Belief</Heading>
                 <Text maxW="800px" color="gray.300" fontSize={"13px"}>
-                  At FabriqExhibits, we strongly believe that our strength
-                  actually lies in the hands that build our structures. Every
-                  award-winning design and global milestone starts with a team
-                  that feels seen, heard, and genuinely inspired. Our
-                  organization has moved away from traditional corporate
-                  hierarchy structures to create a work environment that
-                  supports employee development through various projects which
-                  help them create permanent professional relationships while
-                  developing self-trust.
+                  At FabriqExhibits, we believe that our people are the
+                  foundation of everything we create. Great design, flawless
+                  execution, and global success are only possible when
+                  individuals feel valued, empowered, and inspired. We are
+                  committed to building a workplace where every team member has
+                  the opportunity to grow, contribute, and thrive.
                 </Text>
               </VStack>
 
@@ -263,9 +260,9 @@ const Career = () => {
                     People First Culture
                   </Heading>
                   <Text color="gray.400" fontSize="md">
-                    We’ve created a supportive environment where teamwork isn’t
-                    a buzzword but your daily reality. A space where you enjoy
-                    the liberty to express yourself the way you want.
+                    We foster a supportive and inclusive environment where ideas
+                    are respected, collaboration is encouraged, and every voice
+                    matters.
                   </Text>
                 </Box>
 
@@ -285,10 +282,9 @@ const Career = () => {
                     Growth & Opportunities
                   </Heading>
                   <Text color="gray.400" fontSize="md">
-                    Your growth is our mission and we will support you with all
-                    the tools and opportunities that you need to thrive in your
-                    career, ensuring continuous learning and professional
-                    development.
+                    We believe in continuous learning and professional
+                    development, giving our team the tools and opportunities to
+                    expand their skills and advance their careers.
                   </Text>
                 </Box>
 
@@ -308,9 +304,9 @@ const Career = () => {
                     Respect & Integrity
                   </Heading>
                   <Text color="gray.400" fontSize="md">
-                    We maintain integrity and fairness in all our endeavors,
-                    ensuring that we operate within an atmosphere of trust,
-                    transparency, and respect.
+                    We uphold a culture of mutual respect, fairness, and
+                    transparency—ensuring a workplace built on trust and
+                    accountability.
                   </Text>
                 </Box>
 
@@ -330,9 +326,9 @@ const Career = () => {
                     Ownership & Excellence
                   </Heading>
                   <Text color="gray.400" fontSize="md">
-                    We foster leadership and responsibility among our employees,
-                    allowing them to take ownership of their work and aim for
-                    excellence in everything they do.
+                    We encourage our team to take ownership of their work, with
+                    a shared commitment to delivering excellence in every
+                    project.
                   </Text>
                 </Box>
 
@@ -352,9 +348,9 @@ const Career = () => {
                     Global Exposure
                   </Heading>
                   <Text color="gray.400" fontSize="md">
-                    Our employees have opportunities to gain practical
-                    experience in various kinds of work through our projects in
-                    India and elsewhere.
+                    With projects across India and international markets, we
+                    offer our team the chance to work on diverse and exciting
+                    assignments that broaden perspectives.
                   </Text>
                 </Box>
               </SimpleGrid>
@@ -587,40 +583,54 @@ const Career = () => {
 
               <Text color="black" mb={6} fontSize={"md"} lineHeight="1.6">
                 At FabriqExhibits, we believe that great work begins with great
-                people. Join a team passionate about design, driven by
-                excellence, and committed to delivering impactful experiences
-                across global platforms.
+                people. Joining us means becoming part of a team that is
+                passionate about design, driven by excellence, and committed to
+                delivering impactful experiences across global platforms.
               </Text>
 
               {/* Compact List */}
               <Box as="ul" pl={4} m={0} style={{ listStyleType: "none" }}>
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🌍 <b>Global Projects:</b> Work across India & international
-                  markets
+                  🌍 <b>Global Projects:</b> Be involved in exciting projects
+                  across India and international markets. Gain exposure to
+                  diverse industries, global exhibitions, and large-scale design
+                  and build assignments.
                 </Text>
 
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🎯 <b>Real Impact:</b> Your ideas shape meaningful experiences
+                  🎯 <b>Make a Real Impact:</b> Your ideas and contributions
+                  matter. We empower our team to take ownership, innovate, and
+                  play a key role in shaping meaningful brand experiences.
                 </Text>
 
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  📈 <b>Growth:</b> Learn, build skills & advance your career
+                  📈 <b>Grow with Us:</b> We are committed to your professional
+                  growth. From learning opportunities to hands-on project
+                  exposure, we help you build skills and advance your career.
                 </Text>
 
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🤝 <b>Collaborative Culture:</b> Teamwork & open communication
+                  🤝 <b>Collaborative Culture:</b> Work in an environment that
+                  values teamwork, open communication, and mutual respect. We
+                  believe the best results come from strong collaboration.
                 </Text>
 
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🛠️ <b>End-to-End Exposure:</b> From design to execution
+                  🛠️ <b>End-to-End Exposure:</b>Experience the complete
+                  journey—from concept and design to fabrication and
+                  execution—giving you a holistic understanding of the industry.
                 </Text>
 
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🏆 <b>Excellence:</b> Quality, precision & innovation
+                  🏆 <b>Driven by Excellence:</b> Be part of a team that strives
+                  for quality, precision, and innovation in everything we do. We
+                  celebrate achievements and continuously aim higher.
                 </Text>
 
                 <Text as="li" color="gray.700" fontSize="md">
-                  💡 <b>Creative Environment:</b> Dynamic & inspiring work
+                  💡 <b>Creative & Dynamic Environment:</b> No two days are the
+                  same. Work on diverse, challenging, and creative projects that
+                  keep you inspired and motivated. work
                 </Text>
               </Box>
             </GridItem>

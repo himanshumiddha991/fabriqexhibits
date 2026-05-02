@@ -234,12 +234,12 @@ const Home = () => {
       desc: "Automechanika 2024",
       image: RMPBearing,
     },
-    {
-      id: 9,
-      title: "Shenzen Skyworth Digital",
-      desc: "Convergence 2025",
-      image: Skyworth,
-    },
+    // {
+    //   id: 9,
+    //   title: "Shenzen Skyworth Digital",
+    //   desc: "Convergence 2025",
+    //   image: Skyworth,
+    // },
   ];
 
   // const mediaItems = [
@@ -402,7 +402,7 @@ const Home = () => {
     },
     {
       q: "Do you have manufacturing facilities?",
-      a: "Yes, we have factories in multiple parts of India as well as Dubai, which helps us deliver quality execution and efficient project management.",
+      a: "Yes, we have factories in multiple parts of India (Delhi & Mumbai) and Dubai,, which helps us deliver quality execution and efficient project management.",
     },
     {
       q: "What types of businesses do you work with?",
@@ -445,32 +445,32 @@ const Home = () => {
     {
       title: "Understand & Consult",
       icon: "💡",
-      desc: "We begin by understanding your brand, objectives, target audience, and exhibition requirements.",
+      desc: "We begin by understanding your brand, objectives, target audience, and exhibition requirements. What we cover: Event details & stall size Brand positioning & goals Budget and timelines Functional requirements",
     },
     {
       title: "Concept & Design",
       icon: "🎨",
-      desc: "Our design team transforms your brief into creative concepts and 3D visualizations.",
+      desc: "Our design team transforms your brief into creative concepts and 3D visualizations. What we deliver: Concept ideas & layouts 3D designs & renders Material and finish suggestions",
     },
     {
       title: "Planning & Approval",
       icon: "📝",
-      desc: "We finalize designs, technical drawings, and execution plans.",
+      desc: "We finalize designs, technical drawings, and execution plans. Includes: Detailed working drawings Costing & timelines Client approvals Compliance with exhibition guidelines",
     },
     {
       title: "Fabrication & Production",
       icon: "🏭",
-      desc: "We ensure high-quality fabrication with in-house facilities across India and Dubai.",
+      desc: "With our in-house facilities across India and Dubai, we ensure high-quality fabrication. Focus areas: Material selection & quality checks Precision manufacturing Graphic production",
     },
     {
       title: "Logistics & Installation",
       icon: "🌍",
-      desc: "We manage end-to-end logistics and on-site installation globally.",
+      desc: "We manage end-to-end logistics and on-site installation globally. What we handle: Transportation & coordination On-site assembly Supervision and finishing",
     },
     {
       title: "Handover & Support",
       icon: "🔍",
-      desc: "We ensure everything is perfect before the show begins.",
+      desc: "We ensure everything is perfect before the show begins. Includes: Final quality check Client walkthrough On-site support during the event",
     },
     {
       title: "Dismantling & Closure",
@@ -551,8 +551,8 @@ const Home = () => {
               Custom Exhibition Stand Builders & Fabricators
             </FadeHeading>
             <p className="hero-desc" fontSize={"16px"}>
-              Welcome to FabriqExhibits — India’s acclaimed exhibition stall
-              building and fabrication company, creating world-class brand
+              Welcome to FabriqExhibits — India’s acclaimed Custom Exhibition
+              Stall Building and Fabricating company, creating world-class brand
               environments across the globe.
             </p>
 
@@ -722,7 +722,7 @@ const Home = () => {
         </Container>
       </Box>
       {/* logo banner */}
-      <Box bg="#FFE2A6" py={6} overflow="hidden">
+      <Box bg="#000" py={6} overflow="hidden">
         {/* <Box
           animation={{
             base: "scroll 5s linear infinite",
@@ -768,8 +768,8 @@ const Home = () => {
             m={"auto"}
             width={{ base: "100%", md: "60%" }}
           >
-            Discover how we redefine excellence with elite designs and flawless
-            execution.
+            Discover how we bring your vision to life through thoughtful design
+            and precise execution, recognized globally.
           </Text>
           {/* <HStack
             spacing={4}
@@ -1136,7 +1136,7 @@ const Home = () => {
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
                     {
-                      " FabriqExhibits is a design-driven exhibition and interior solutions company with 15+ years of industry experience. We specialize in custom stall design and fabrication, retail & office interiors, and graphic design — offering end-to-end solutions that ensure your brand commands attention. Our approach is simple yet powerful: Think -----> Design -----> Build -----> Deliver. By merging creativity with technical precision, we transform ambitious visions into high-impact physical landmarks. We are recognized as a leader in India with a global footprint and invite you to partner with us to create engaging spaces that elevate your brand and captivate audiences."
+                      "FabriqExhibits is a Custom Stall Building and Fabricating company with 15+ years of industry experience. We specialize in custom stall design and fabrication, retail & office interiors, and graphic design — offering end-to-end solutions that ensure your brand commands attention. Our approach is simple yet powerful: Think -----> Design -----> Build -----> Deliver. By merging creativity with technical precision, we transform ambitious visions into high-impact physical landmarks. We are recognized as a leader in India with a global footprint and invite you to partner with us to create engaging spaces that elevate your brand and captivate audiences."
                     }
                   </Text>
 
@@ -1232,12 +1232,12 @@ const Home = () => {
                 boxShadow="0 10px 30px rgba(0,0,0,0.05)"
               >
                 <VStack align="start" spacing={5}>
-                  <Feature text="Deliver Projects Globally" />
-                  <Feature text="Possesses Strong Infrastructure " />
-                  <Feature text="Follow a Design-Led Approach " />
-                  <Feature text="Master in End-to-End Execution" />
-                  <Feature text="Recognized across global platforms " />
-                  <Feature text="Committed to delivering ONLY the best" />
+                  <Feature text="🌐 Global Presence – Delivering projects across international exhibitions" />
+                  <Feature text="🏭 Strong Infrastructure – Multiple factories across India and Dubai" />
+                  <Feature text="🎯 Design-Led Approach – Creative, strategic, and brand-focused" />
+                  <Feature text="🛠️ End-to-End Execution – Concept to completion under one roof" />
+                  <Feature text="🏅 Award-Winning Work – Recognized across global platforms" />
+                  <Feature text="🤝 Client Satisfaction First – Committed to delivering the best in a competitive world" />
                 </VStack>
               </Box>
             </Box>
@@ -1510,8 +1510,8 @@ const Home = () => {
 
                     {/* Circle */}
                     <Box
-                      w="160px"
-                      h="160px"
+                      w="260px"
+                      h="300px"
                       borderRadius="full"
                       border="2px solid #ddd"
                       position="relative"
@@ -1520,22 +1520,28 @@ const Home = () => {
                     >
                       {/* Top Content */}
                       <Flex
-                        h="50%"
+                        h="80%"
+                        p={"0  10px"}
                         align="center"
                         justify="center"
                         direction="column"
                         textAlign="center"
+                        gap={"10px"}
                       >
                         <Text fontSize="lg">{step.icon}</Text>
                         <Text fontSize="sm" fontWeight={"700"}>
                           {" "}
                           {step.title}
                         </Text>
+                        <Text fontSize="sm" fontWeight={"500"}>
+                          {" "}
+                          {step.desc}
+                        </Text>
                       </Flex>
 
                       {/* Bottom Gradient */}
                       <Flex
-                        h="50%"
+                        h="25%"
                         align="center"
                         justify="center"
                         bgGradient={
