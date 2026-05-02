@@ -47,7 +47,7 @@ const ServiceDetail = () => {
 slidertitle: "Building Spaces that Command Attention",
       slidersubtitle: "FabriqExhibits delivers the best custom stall design and fabrication solutions, creating impactful, engaging exhibition spaces for brands globally.",
       
-      title: "Exhibition Stands That Create Impact",
+      title: "Creating Exhibition Spaces That Stand Out",
       metaTitle: "Exhibition Stands Design & Build | Fabrig Exhibits",
       metaDescription:
         "Fabrig Exhibits helps you design and build exhibition stands. We offer simple, creative, and complete booth services for your business.",
@@ -57,14 +57,14 @@ slidertitle: "Building Spaces that Command Attention",
       description: `<section class="about-section">
   <div class="container">
     <p>
-      At <strong>FabriqExhibits</strong>, we are experts in designing and fabricating custom exhibition stalls that capture attention and effectively establish your brand identity.
+      At <strong>FabriqExhibits</strong>, we specialize in designing and fabricating custom exhibition stalls that capture attention and communicate your brand effectively.
     </p>
 
     <p>
-      From concept development and 3D visualization to fabrication and on-site installation, we deliver turnkey exhibition solutions across the globe.
+      From concept development and 3D visualization to fabrication and on-site installation, we deliver<strong> turnkey exhibition solutions globally.</strong>
     </p>
 
-    <h3><strong>Our Deliverables:</strong></h3>
+    <h3><strong>What We Offer:</strong></h3>
     <ul>
       <li>Custom Exhibition Stall Design</li>
       <li>Modular & Custom Booth Fabrication</li>
@@ -73,7 +73,7 @@ slidertitle: "Building Spaces that Command Attention",
       <li>Global Installation & Dismantling</li>
     </ul>
 
-    <h3><strong>Advantages of Choosing FabriqExhibits:</strong></h3>
+    <h3><strong>Why Choose Us:</strong></h3>
     
     <ul>
       <li>Innovative and functional designs</li>
@@ -92,7 +92,7 @@ slidertitle: "Building Spaces that Command Attention",
       slidertitle: "Designing Interiors that Inspire",
       slidersubtitle: "We design functional and brand-oriented retail and office interiors that enhance customer experience and productivity.",
       
-      title: "Retail & Office Interior Design",
+      title: "Designing Spaces That Reflect Your Brand",
       metaTitle: "Exhibition Stand Design & Build Services | Fabrig",
       metaDescription:
         "We design and build exhibition stands that help your brand stand out. Simple, creative, and complete booth solutions by Fabrig Exhibits.",
@@ -102,10 +102,10 @@ slidertitle: "Building Spaces that Command Attention",
       description: `<section class="interior-section">
   <div class="container">
 
-    <h2>><strong>Blending Your Brand’s Reflection in Your Interior</strong></h2>
+   
 
     <p>
-We are committed to engineering sophisticated and functional retail and office environments that not only elevate your customer experience but also amplify the productivity levels of the people living in the space.    </p>
+We create modern, functional, and aesthetically driven retail and office environments that enhance customer experience and productivity.</p>
 
     <h3><strong>Our Expertise:</strong></h3>
     
@@ -116,10 +116,10 @@ We are committed to engineering sophisticated and functional retail and office e
       <li>Custom Furniture & Fixtures</li>
     </ul>
 
-    <h2>Designing Visuals that Define Your Brand</h2>
+    <h2><strong>Our Approach:</strong></h2>
 
     <p>
-      At <strong>FabriqExhibits</strong>, we create high-impact brand identities, ensuring consistency across all exhibition, retail spaces, and digital platforms.
+      We blend design, functionality, and brand identity to deliver spaces that are both visually appealing and highly practical.
     </p>
 
   </div>
@@ -131,7 +131,7 @@ We are committed to engineering sophisticated and functional retail and office e
       slidertitle: "Graphics That Steal The Spotlight",
       slidersubtitle: "FabriqExhibits deliver high-impact graphics that command attention and leave a lasting impression on your audiences.",
       
-      title: "Creative Graphics Design Services",
+      title: "Visual Communication That Makes an Impact",
       metaTitle:
         "Creative Graphics Design Services | Exhibition & Brand Design Company India",
       metaDescription:
@@ -142,18 +142,26 @@ We are committed to engineering sophisticated and functional retail and office e
       description: `<section class="visual-section">
   <div class="container">
 
-    <h2><strong>Designing Visuals That Make Your Brand Go Viral</strong></h2>
+   
 
     <p>
-      Our creative graphic design solutions transform your brand identity into a commanding visual narrative. With our communication strategies and aesthetic visuals, we ensure that your brand consistently captures the spotlight across all major international exhibitions, bespoke retail environments, as well as high-impact marketing platforms — making your brand’s message go viral.
+      Our graphic design solutions ensure your brand stands out visually across exhibitions, retail spaces, and marketing platforms.
     </p>
 
-    <h3><strong>Our Services Include: </strong></h3>
+    <h3><strong>Services Include: </strong></h3>
     <ul>
       <li>Exhibition Graphics & Branding</li>
       <li>Large Format Printing Designs</li>
       <li>Corporate Branding & Identity</li>
       <li>Marketing Collaterals</li>
+    </ul>
+
+<h3><strong>What Sets Us Apart: </strong></h3>
+ <ul>
+      <li>Strong design language aligned with brand identity</li>
+      <li>High-quality, impactful visuals</li>
+      <li>Seamless integration with physical spaces </li>
+  
     </ul>
 
   </div>

@@ -98,7 +98,7 @@ const Portfolio = () => {
   }, [imageGallery, visibleCount]);
   return (
     <>
-      <Banner  subheading="Excellence in every detail" heading="Portfolio" caption="Builds that command attention" BannerBg={BannerBg} />
+      <Banner  subheading="Designs that inspire. Builds that perform." heading="Portfolio" caption="Explore a selection of our exhibition stalls, retail interiors, office spaces, and graphic design projects delivered for brands across India and international markets." BannerBg={BannerBg} />
   
       <Box p="40px" w={{ base: "100%", md: "70%" }} mx="auto">
               <Heading as="h1" mb={4} textAlign="center">
@@ -116,13 +116,12 @@ const Portfolio = () => {
 
                <p className="" fontSize={"16px"}>
             
-          Discover a curated collection of our exhibition stalls, retail interiors and graphic design projects for leading brands across India and international markets.
-Every design is a reflection of our experience, developed over 15 years, blending the deep-rooted experience with technical expertise. From the initial idea to project completion, we emphasize a legacy of quality and execution excellence so every project becomes a physical landmark for your brand. 
-
-            
-            
+          At FabriqExhibits, every project begins with a vision and ends with a space that creates impact. Our portfolio reflects over a decade of experience in designing and fabricating exhibition stalls, retail environments, office interiors, and graphic design solutions for diverse industries and global clients.
+ 
 
             </p>
+
+            <p>From concept to completion, we focus on creativity, quality, and execution excellence.</p>
             </Box>
           
       <Box py={20} px={8}>

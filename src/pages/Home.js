@@ -1168,7 +1168,7 @@ const Home = () => {
             </FadeHeading>
 
             {/* Right Content */}
-            <Box
+            {/* <Box
               display="none"
               justifyContent={{ base: "center", md: "flex-end" }}
             >
@@ -1181,7 +1181,7 @@ const Home = () => {
               >
                 Follow on instagram
               </Button>
-            </Box>
+            </Box> */}
           </Grid>
 
           <ExpandableCardsGroup
