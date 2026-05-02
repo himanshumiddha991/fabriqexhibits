@@ -98,7 +98,9 @@ const Portfolio = () => {
   }, [imageGallery, visibleCount]);
   return (
     <>
-      <Banner  subheading="Designs that inspire. Builds that perform." heading="Portfolio" caption="Explore a selection of our exhibition stalls, retail interiors, office spaces, and graphic design projects delivered for brands across India and international markets." BannerBg={BannerBg} />
+      <Banner  subheading="Designs that inspire. Builds that perform." 
+      heading=" " 
+caption={<>Explore a selection of our exhibition stalls, retail interiors, office spaces, and <br/> graphic design projects delivered for brands across India and international markets.</>} BannerBg={BannerBg} />
   
       <Box p="40px" w={{ base: "100%", md: "70%" }} mx="auto">
               <Heading as="h1" mb={4} textAlign="center">
