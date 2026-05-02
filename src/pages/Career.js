@@ -174,11 +174,7 @@ const Career = () => {
               </FadeHeading>
 
               <Text fontSize="md" color="gray.700" mb={6} lineHeight="1.8">
-                FabriqExhibits operates as a design-based exhibition and
-                interior solutions company which has served the industry for
-                over 15 years. Our company creates powerful brand spaces which
-                we develop through our creative design work and our exact
-                manufacturing capabilities and our smooth operational methods.
+                Welcome to FabriqExhibits, where we transform ideas into immersive brand experiences. We have successfully delivered 7000+ exhibition stalls and creative spaces across global markets. From developing a concept to delivering the output, we apply strong design thinking with flawless on-ground execution to create an impactful environment that elevates your brand. We foster a client-first approach and exceed their expectations through reliable timelines, fostering long-term relationships. At FabriqExhibits, we craft experiences that engage, inspire, and deliver real results.
               </Text>
 
               <Heading fontSize="lg" mb={4}>
@@ -232,12 +228,8 @@ const Career = () => {
               <VStack spacing={4} textAlign="center" mb={12}>
                 <Heading size="xl">🌟 Our Belief</Heading>
                 <Text maxW="800px" color="gray.300" fontSize={"13px"}>
-                  At FabriqExhibits, we believe that our people are the
-                  foundation of everything we create. Great design, flawless
-                  execution, and global success are only possible when
-                  individuals feel valued, empowered, and inspired. We are
-                  committed to building a workplace where every team member has
-                  the opportunity to grow, contribute, and thrive.
+                 At FabriqExhibits, we believe that our people are the foundation of everything we create. Great design, flawless execution, and global success are only possible when individuals feel valued, empowered, and inspired.
+We are committed to building a workplace where every team member has the opportunity to grow, contribute, and thrive.
                 </Text>
               </VStack>
 
@@ -591,7 +583,7 @@ const Career = () => {
               {/* Compact List */}
               <Box as="ul" pl={4} m={0} style={{ listStyleType: "none" }}>
                 <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🌍 <b>Global Projects:</b> Be involved in exciting projects
+                  🌍 <b>Work on Global Projects:</b> Be involved in exciting projects
                   across India and international markets. Gain exposure to
                   diverse industries, global exhibitions, and large-scale design
                   and build assignments.
@@ -630,7 +622,7 @@ const Career = () => {
                 <Text as="li" color="gray.700" fontSize="md">
                   💡 <b>Creative & Dynamic Environment:</b> No two days are the
                   same. Work on diverse, challenging, and creative projects that
-                  keep you inspired and motivated. work
+                  keep you inspired and motivated.
                 </Text>
               </Box>
             </GridItem>

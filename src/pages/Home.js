@@ -1431,11 +1431,15 @@ const Home = () => {
           {/* Heading Section */}
           <VStack spacing={3} mb={14} textAlign="center">
             <FadeHeading textAlign={"center"} letterSpacing="1px">
-              From Idea to Impact —{" "}
-              <Text as="span" color="var(--color-primary)">
-                Seamlessly Delivered
+              Our{" "}
+                 <Text as="span" color="var(--color-primary)">
+                Process 
               </Text>{" "}
             </FadeHeading>
+
+             <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>
+              From Idea to Impact — Seamlessly Delivered
+            </Text>
             <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>
               At FabriqExhibits, we follow a streamlined, transparent process to
               ensure every exhibition stall is designed and delivered with
