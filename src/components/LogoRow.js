@@ -116,7 +116,7 @@ const LogoRow = ({ reverse = false }) => {
       >
         {scrollingLogos.map((logo, index) => (
           <Box key={index} className="scrollContainer">
-            <Image src={logo} maxH="50px" objectFit="contain" opacity={0.8} />
+            <Image src={logo} maxH="50px" objectFit="contain" />
           </Box>
         ))}
       </Box>

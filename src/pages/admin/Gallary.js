@@ -112,6 +112,7 @@ const Gallery = () => {
             onChange={(e) => {
               setTagFilter(e.target.value);
               getGallery(1, e.target.value);
+              setPage(1);
             }}
             w="250px"
           >

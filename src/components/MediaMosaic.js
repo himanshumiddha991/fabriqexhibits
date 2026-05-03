@@ -64,12 +64,17 @@ function MediaMasonry({ items, tag, ShowTitle = true }) {
             h={heights[index % heights.length]}
           >
             {/* Image / Thumbnail */}
+
             <Box
               as="img"
               src={`${process.env.REACT_APP_API_URL}/${item?.media?.thumbnail_path || item?.media?.file_path}`}
-              w="100%"
-              h="100%"
-              objectFit="cover"
+              alt="project"
+              loading="lazy"
+              width="100%"
+              height="220px"
+              style={{
+                objectFit: "cover",
+              }}
             />
 
             {/* Play icon for videos */}
@@ -83,12 +88,14 @@ function MediaMasonry({ items, tag, ShowTitle = true }) {
                 justifyContent="center"
               >
                 <Box className="process-card-wrapper">
-                  <Image
+                  <img
                     src={play}
-                    w="48px"
-                    h="48px"
-                    alt="brand logo"
+                    width="48"
+                    height="48"
+                    loading="lazy"
+                    alt="play icon"
                     className="process-card-image"
+                    style={{ pointerEvents: "none" }}
                   />
                 </Box>
               </Box>

@@ -1432,12 +1432,12 @@ const Home = () => {
           <VStack spacing={3} mb={14} textAlign="center">
             <FadeHeading textAlign={"center"} letterSpacing="1px">
               Our{" "}
-                 <Text as="span" color="var(--color-primary)">
-                Process 
+              <Text as="span" color="var(--color-primary)">
+                Process
               </Text>{" "}
             </FadeHeading>
 
-             <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>
+            <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>
               From Idea to Impact — Seamlessly Delivered
             </Text>
             <Text maxW="520px" fontSize="md" color="black" fontWeight={"600"}>
@@ -1533,7 +1533,7 @@ const Home = () => {
                         gap={"10px"}
                       >
                         <Text fontSize="lg">{step.icon}</Text>
-                        <Text fontSize="sm" fontWeight={"700"}>
+                        <Text fontSize={"14px"} fontWeight={"700"}>
                           {" "}
                           {step.title}
                         </Text>

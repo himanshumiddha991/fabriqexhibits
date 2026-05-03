@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Box, Button, Stack, Image, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Stack,
+  Image,
+  Heading,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -16,9 +23,11 @@ import project_1 from "../images/projects/project_1.jpeg";
 import project_2 from "../images/projects/project_2.jpeg";
 import project_3 from "../images/projects/project_3.jpeg";
 import project_4 from "../images/projects/project_4.jpeg";
+import api from "../utils/api";
 const ServiceDetail = () => {
   const { slug } = useParams();
-
+  const [gallery, setGallery] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(8);
   const [current, setCurrent] = useState(0);
   const desktopSlides = [slide_1, slide_2, slide_3];
   const mobileSlides = [m_slide_1, m_slide_2, m_slide_3];
@@ -36,17 +45,13 @@ const ServiceDetail = () => {
     return () => clearInterval(interval);
   }, []);
 
-
-
-
-
-  
   const servicesData = [
     {
       slug: "exhibitions",
-slidertitle: "Building Spaces that Command Attention",
-      slidersubtitle: "FabriqExhibits delivers the best custom stall design and fabrication solutions, creating impactful, engaging exhibition spaces for brands globally.",
-      
+      slidertitle: "Building Spaces that Command Attention",
+      slidersubtitle:
+        "FabriqExhibits delivers the best custom stall design and fabrication solutions, creating impactful, engaging exhibition spaces for brands globally.",
+
       title: "Creating Exhibition Spaces That Stand Out",
       metaTitle: "Exhibition Stands Design & Build | Fabrig Exhibits",
       metaDescription:
@@ -90,8 +95,9 @@ slidertitle: "Building Spaces that Command Attention",
     {
       slug: "retail-office-interiors",
       slidertitle: "Designing Interiors that Inspire",
-      slidersubtitle: "We design functional and brand-oriented retail and office interiors that enhance customer experience and productivity.",
-      
+      slidersubtitle:
+        "We design functional and brand-oriented retail and office interiors that enhance customer experience and productivity.",
+
       title: "Designing Spaces That Reflect Your Brand",
       metaTitle: "Exhibition Stand Design & Build Services | Fabrig",
       metaDescription:
@@ -129,8 +135,9 @@ We create modern, functional, and aesthetically driven retail and office environ
     {
       slug: "graphics-design",
       slidertitle: "Graphics That Steal The Spotlight",
-      slidersubtitle: "FabriqExhibits deliver high-impact graphics that command attention and leave a lasting impression on your audiences.",
-      
+      slidersubtitle:
+        "FabriqExhibits deliver high-impact graphics that command attention and leave a lasting impression on your audiences.",
+
       title: "Visual Communication That Makes an Impact",
       metaTitle:
         "Creative Graphics Design Services | Exhibition & Brand Design Company India",
@@ -169,16 +176,63 @@ We create modern, functional, and aesthetically driven retail and office environ
     },
   ];
   const service = servicesData.find((item) => item.slug === slug);
-  const mediaItems = useSelector((s) => s.gallery.data);
+  // const mediaItems = useSelector((s) => s.gallery.data);
   const [mediaTag, setMediaTag] = useState("exhibition");
+
   useEffect(() => {
     if (service) {
       setMediaTag(service.tag);
     }
   }, [service]);
+
+  useEffect(() => {
+    getGallery();
+    setVisibleCount(8);
+  }, [mediaTag]);
+
   if (!service) {
     return <h1>Service Not Found</h1>;
   }
+
+  const limit = 50;
+  const mergeUniqueById = (oldData, newData) => {
+    const map = new Map();
+    oldData.forEach((item) => map.set(item.id, item));
+    newData.forEach((item) => map.set(item.id, item));
+    return Array.from(map.values());
+  };
+
+  const getGallery = async () => {
+    try {
+      let page = 1;
+      let totalPages = 1;
+      let allData = [];
+
+      while (page <= totalPages) {
+        const res = await api.get(
+          `/api/gallary?page=${page}&limit=${limit}&tag=${mediaTag}`,
+        );
+
+        if (res.data.success) {
+          allData = [...allData, ...res.data.data];
+          totalPages = res.data.totalPages;
+        }
+
+        page++;
+      }
+
+      setGallery((prev) => mergeUniqueById(prev, allData));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const imageGallery = gallery.filter(
+    (item) =>
+      item?.media?.file_type === "image" &&
+      item?.tags?.toLowerCase().includes(mediaTag),
+  );
+
+  const visibleImages = imageGallery.slice(0, visibleCount);
   return (
     <>
       {" "}
@@ -236,21 +290,14 @@ We create modern, functional, and aesthetically driven retail and office environ
               fontWeight={"800"}
               fontSize={{ base: "20px", md: "30px" }}
             >
-
-  {service && service.slidertitle
-    ? service.slidertitle
-    : "Designing Experiences. Building Global Impact."}
-
+              {service && service.slidertitle
+                ? service.slidertitle
+                : "Designing Experiences. Building Global Impact."}
             </Box>
             <p className="hero-desc" fontSize={"16px"}>
-            
-            {service && service.slidersubtitle
-    ? service.slidersubtitle
-    : "Welcome to FabriqExhibits — India’s acclaimed exhibition stall building and fabrication company, creating world-class brand environments across the globe."}
-            
-            
-            
-
+              {service && service.slidersubtitle
+                ? service.slidersubtitle
+                : "Welcome to FabriqExhibits — India’s acclaimed exhibition stall building and fabrication company, creating world-class brand environments across the globe."}
             </p>
 
             <Stack
@@ -286,8 +333,54 @@ We create modern, functional, and aesthetically driven retail and office environ
         />
       </Box>
       <Box w={{ base: "100%", md: "70%" }} mx="auto" p="40px">
-        <MediaMosaic items={mediaItems} ShowTitle={true} tag={mediaTag} />
+        <MediaMosaic items={visibleImages} ShowTitle={true} tag={mediaTag} />
+        {/* <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+          {visibleImages.map((item) => (
+            <Box
+              key={item.id}
+              h="280px"
+              position="relative"
+              overflow="hidden"
+              borderRadius="10px"
+            >
+              <Box
+                bgGradient="linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0))"
+                position="absolute"
+                w="100%"
+                h="100%"
+              />
+
+              <Box
+                as="img"
+                src={`${process.env.REACT_APP_API_URL}/${item.media.thumbnail_path || item.media.file_path}`}
+                loading="lazy"
+                width="100%"
+                height="100%"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            </Box>
+          ))}
+        </SimpleGrid> */}
       </Box>
+      {visibleCount < imageGallery.length && (
+        <Box display="flex" justifyContent="center" py={10}>
+          <button
+            onClick={() => setVisibleCount((prev) => prev + 8)}
+            style={{
+              background: "var(--color-primary)",
+              padding: "10px 20px",
+              borderRadius: "8px",
+              fontWeight: "600",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Load More
+          </button>
+        </Box>
+      )}
     </>
   );
 };

@@ -21,6 +21,7 @@ export default function AdminLayout({ children }) {
       } catch (error) {
         console.error("API error:", error);
         store.dispatch(logout());
+        window.location.reload();
       }
     };
 

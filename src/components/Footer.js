@@ -15,6 +15,7 @@ import {
   Flex,
   Container,
 } from "@chakra-ui/react";
+
 import React, { useState } from "react";
 import { PhoneIcon, EmailIcon } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
@@ -410,13 +411,22 @@ function Footer() {
               maxW="1300px"
               mx="auto"
               justify="center"
-              flexDir={{ base: "column", md: "row" }}
+              alignItems={"center"}
+              flexDir={{ base: "column", md: "column" }}
               gap={4}
             >
               <Text fontSize="md" color="gray.500">
                 © {new Date().getFullYear()} Fabriq Exhibits. All Rights
                 Reserved.
               </Text>
+              <Link
+                fontSize="md"
+                color="gray.500"
+                href="https://digitalwhopper.com/"
+                isExternal
+              >
+                Designed & Developed by Digital Whopper
+              </Link>
             </Flex>
           </Box>
         </Container>
