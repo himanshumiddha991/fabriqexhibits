@@ -1184,7 +1184,7 @@ const Home = () => {
             </Box> */}
           </Grid>
 
-          <ExpandableCardsGroup
+          {/* <ExpandableCardsGroup
             cards={global_reco}
             expandable={false}
             css={{ height: "220px" }}
@@ -1192,6 +1192,11 @@ const Home = () => {
             showPopup={true}
             ShowTitle={true}
             ShowDesc={true}
+          /> */}
+          <MediaMosaic
+            items={mediaItems}
+            ShowTitle={true}
+            tag={"conferences-seminars"}
           />
         </Container>
       </Box>
