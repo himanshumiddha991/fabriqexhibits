@@ -11,6 +11,7 @@ import {
   Select,
   Text,
 } from "@chakra-ui/react";
+import { galleryCategories } from "../../utils/galleryCategories";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../utils/api";
 
@@ -193,7 +194,7 @@ const GallaryCreate = () => {
             value={tags}
             onChange={(e) => setTags(e.target.value)}
           >
-            <option value="exhibition">Exhibition</option>
+            {/* <option value="exhibition">Exhibition</option>
             <option value="retail-interiors">Retail Interiors</option>
             <option value="theme-events">Theme Events</option>
             <option value="conferences-seminars">Conferences & Seminars</option>
@@ -201,16 +202,13 @@ const GallaryCreate = () => {
             <option value="awards">Awards</option>
             <option value="portfolio">Portfolio</option>
             <option value="countries">Clients</option>
-            <option value="showcasing-stands">Showcasing Stands</option>
+            <option value="showcasing-stands">Showcasing Stands</option> */}
+            {galleryCategories.map((cat) => (
+              <option key={cat.value} value={cat.value}>
+                {cat.label}
+              </option>
+            ))}
           </Select>
-
-          {/* Alt */}
-          <Input
-            type="text"
-            placeholder="Enter Alt Text"
-            value={alt}
-            onChange={(e) => setAlt(e.target.value)}
-          />
 
           {/* Title */}
           <Input
@@ -225,6 +223,13 @@ const GallaryCreate = () => {
             placeholder="Enter Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+          />
+          {/* Alt */}
+          <Input
+            type="text"
+            placeholder="Enter Alt Text"
+            value={alt}
+            onChange={(e) => setAlt(e.target.value)}
           />
 
           {/* Preview */}

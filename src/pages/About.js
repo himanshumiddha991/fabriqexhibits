@@ -77,6 +77,7 @@ const About = () => {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       title: item?.media?.title,
       description: item?.media?.description,
+      alt: item?.media?.alt,
     });
     onOpen();
   };
@@ -126,7 +127,19 @@ const About = () => {
       <Banner
         heading="About Us"
         subheading="Designing Experiences. Building Global Impact."
-        caption="We don’t just build stalls—we create immersive brand experiences that turn into success stories across global platforms."
+        caption={
+          <>
+            Explore a selection of our exhibition stalls, retail interiors,
+            office spaces, and <br /> graphic design projects delivered for
+            brands across India and international markets.
+          </>
+        }
+        caption={
+          <>
+            We don’t just build stalls—we create immersive brand experiences
+            <br /> that turn into success stories across global platforms.
+          </>
+        }
         BannerBg={BannerBg}
       />
       <Box py={{ base: 12, md: 20 }} bg="gray.50">
@@ -170,10 +183,11 @@ const About = () => {
               >
                 <Stack spacing={3}>
                   <Text fontSize="md" color="black">
-                    FabriqExhibits is a design-driven exhibition and interior
-                    solutions company. We have 15 + years of industry
-                    experience. We specialize in creating an impactful brand
-                    environment through innovative design, precision
+                    FabriqExhibits is a leading Custom Exhibition Stand building
+                    and Fabricating company, delivering impactful brand
+                    experiences across global platforms. We have 15 + years of
+                    industry experience. We specialize in creating an impactful
+                    brand environment through innovative design, precision
                     fabrication, and seamless execution.
                   </Text>
 
@@ -202,7 +216,7 @@ const About = () => {
               </Box>
             </GridItem>
           </Grid>
-          <Text textAlign={"center"} pt={12} fontSize={"15px"}>
+          <Text textAlign={"justify"} pt={12} fontSize={"15px"}>
             Welcome to FabriqExhibits, where we transform ideas into immersive
             brand experiences. We have successfully delivered 7000+ exhibition
             stalls and creative spaces across global markets. From developing a

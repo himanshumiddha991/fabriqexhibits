@@ -18,6 +18,16 @@ const Banner = ({
       bgSize="cover"
       bgPosition="center"
       bgRepeat="no-repeat"
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        bg: "rgba(0, 0, 0, 0.6)", // 👈 shadow overlay
+        zIndex: 0,
+      }}
     >
       {/* Dark Overlay */}
       <Box position="absolute" inset={0} bg="blackAlpha.600" />
@@ -41,7 +51,7 @@ const Banner = ({
         /> */}
 
         <Text
-          color="whiteAlpha.900"
+          color="white"
           fontSize={{ base: "sm", md: "md" }}
           letterSpacing="wide"
         >
@@ -59,7 +69,7 @@ const Banner = ({
           {heading}
         </FadeHeading>
 
-        <Text color="whiteAlpha.800" fontSize={{ base: "md", md: "xl" }}>
+        <Text color="white" fontSize={{ base: "md", md: "xl" }}>
           {caption}
         </Text>
       </VStack>

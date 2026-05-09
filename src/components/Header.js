@@ -30,7 +30,7 @@ function Header() {
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about" },
     {
-      label: "Services",
+      label: "Business Line",
       children: [
         {
           label: "Custom Stall Design & Stall Fabrication",

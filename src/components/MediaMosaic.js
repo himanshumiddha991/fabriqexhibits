@@ -21,6 +21,7 @@ function MediaMasonry({ items, tag, ShowTitle = true }) {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       title: item?.media?.title,
       description: item?.media?.description,
+      alt: item?.media?.alt,
     });
     onOpen();
   };

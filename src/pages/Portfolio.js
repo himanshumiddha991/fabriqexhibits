@@ -26,6 +26,7 @@ const Portfolio = () => {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       title: item?.media?.title,
       description: item?.media?.description,
+      alt: item?.media?.alt,
     });
     onOpen();
   };
@@ -98,34 +99,40 @@ const Portfolio = () => {
   }, [imageGallery, visibleCount]);
   return (
     <>
-      <Banner  subheading="Designs that inspire. Builds that perform." 
-      heading=" " 
-caption={<>Explore a selection of our exhibition stalls, retail interiors, office spaces, and <br/> graphic design projects delivered for brands across India and international markets.</>} BannerBg={BannerBg} />
-  
+      <Banner
+        subheading="Designs that inspire. Builds that perform."
+        heading=" "
+        caption={
+          <>
+            Explore a selection of our exhibition stalls, retail interiors,
+            office spaces, and <br /> graphic design projects delivered for
+            brands across India and international markets.
+          </>
+        }
+        BannerBg={BannerBg}
+      />
+
       <Box p="40px" w={{ base: "100%", md: "70%" }} mx="auto">
-              <Heading as="h1" mb={4} textAlign="center">
-            Our Curated Gallery of Design Excellence
-              </Heading>
-              
-              <Box
-                className="blog-description"
-                mt={10}
-             
-              />
+        <Heading as="h1" mb={4} textAlign="center">
+          Our Curated{" "}
+          <Text as="span" color="var(--color-primary)">
+            Gallery
+          </Text>{" "}
+          of Design Excellence
+        </Heading>
 
+        <Box className="blog-description" mt={10} />
 
+        <p textAlign={"justify"} className="" fontSize={"16px"}>
+          At FabriqExhibits, every project begins with a vision and ends with a
+          space that creates impact. Our portfolio reflects over a decade of
+          experience in designing and fabricating exhibition stalls, retail
+          environments, office interiors, and graphic design solutions for
+          diverse industries and global clients. from concept to completion, we
+          focus on creativity, quality, and execution excellence.
+        </p>
+      </Box>
 
-
-               <p className="" fontSize={"16px"}>
-            
-          At FabriqExhibits, every project begins with a vision and ends with a space that creates impact. Our portfolio reflects over a decade of experience in designing and fabricating exhibition stalls, retail environments, office interiors, and graphic design solutions for diverse industries and global clients.
- 
-
-            </p>
-
-            <p>From concept to completion, we focus on creativity, quality, and execution excellence.</p>
-            </Box>
-          
       <Box py={20} px={8}>
         <HStack spacing={4} pb={10} justifyContent={"center"} wrap="wrap">
           <Button

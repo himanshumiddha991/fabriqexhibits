@@ -174,7 +174,16 @@ const Career = () => {
               </FadeHeading>
 
               <Text fontSize="md" color="gray.700" mb={6} lineHeight="1.8">
-                Welcome to FabriqExhibits, where we transform ideas into immersive brand experiences. We have successfully delivered 7000+ exhibition stalls and creative spaces across global markets. From developing a concept to delivering the output, we apply strong design thinking with flawless on-ground execution to create an impactful environment that elevates your brand. We foster a client-first approach and exceed their expectations through reliable timelines, fostering long-term relationships. At FabriqExhibits, we craft experiences that engage, inspire, and deliver real results.
+                Welcome to FabriqExhibits, where we transform ideas into
+                immersive brand experiences. We have successfully delivered
+                7000+ exhibition stalls and creative spaces across global
+                markets. From developing a concept to delivering the output, we
+                apply strong design thinking with flawless on-ground execution
+                to create an impactful environment that elevates your brand. We
+                foster a client-first approach and exceed their expectations
+                through reliable timelines, fostering long-term relationships.
+                At FabriqExhibits, we craft experiences that engage, inspire,
+                and deliver real results.
               </Text>
 
               <Heading fontSize="lg" mb={4}>
@@ -228,8 +237,12 @@ const Career = () => {
               <VStack spacing={4} textAlign="center" mb={12}>
                 <Heading size="xl">🌟 Our Belief</Heading>
                 <Text maxW="800px" color="gray.300" fontSize={"13px"}>
-                 At FabriqExhibits, we believe that our people are the foundation of everything we create. Great design, flawless execution, and global success are only possible when individuals feel valued, empowered, and inspired.
-We are committed to building a workplace where every team member has the opportunity to grow, contribute, and thrive.
+                  At FabriqExhibits, we believe that our people are the
+                  foundation of everything we create. Great design, flawless
+                  execution, and global success are only possible when
+                  individuals feel valued, empowered, and inspired. We are
+                  committed to building a workplace where every team member has
+                  the opportunity to grow, contribute, and thrive.
                 </Text>
               </VStack>
 
@@ -376,6 +389,185 @@ We are committed to building a workplace where every team member has the opportu
               CONTACT NOW
             </Button> */}
           </VStack>
+        </Container>
+      </Box>
+      <Box
+        py={{ base: 16, md: 24 }}
+        bg="linear-gradient(135deg,#f7f2e7 0%, #e9eef5 100%)"
+      >
+        <Container maxW="7xl">
+          <Grid
+            templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+            gap={{ base: 10, md: 16 }}
+            alignItems="center"
+          >
+            {/* Left Content */}
+            <GridItem
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+            >
+              <FadeHeading mb={6}>
+                Why{" "}
+                <Text as="span" color="var(--color-primary)">
+                  Join
+                </Text>{" "}
+                Us
+              </FadeHeading>
+
+              <Text fontWeight="500" mb={5} fontSize={"md"} color="gray.700">
+                Be a Part of Something Inspiring
+              </Text>
+
+              <Text color="black" mb={6} fontSize={"md"} lineHeight="1.6">
+                At FabriqExhibits, we believe that great work begins with great
+                people. Joining us means becoming part of a team that is
+                passionate about design, driven by excellence, and committed to
+                delivering impactful experiences across global platforms.
+              </Text>
+
+              {/* Compact List */}
+              <Box as="ul" pl={4} m={0} style={{ listStyleType: "none" }}>
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  🌍 <b>Work on Global Projects:</b> Be involved in exciting
+                  projects across India and international markets. Gain exposure
+                  to diverse industries, global exhibitions, and large-scale
+                  design and build assignments.
+                </Text>
+
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  🎯 <b>Make a Real Impact:</b> Your ideas and contributions
+                  matter. We empower our team to take ownership, innovate, and
+                  play a key role in shaping meaningful brand experiences.
+                </Text>
+
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  📈 <b>Grow with Us:</b> We are committed to your professional
+                  growth. From learning opportunities to hands-on project
+                  exposure, we help you build skills and advance your career.
+                </Text>
+
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  🤝 <b>Collaborative Culture:</b> Work in an environment that
+                  values teamwork, open communication, and mutual respect. We
+                  believe the best results come from strong collaboration.
+                </Text>
+
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  🛠️ <b>End-to-End Exposure:</b>Experience the complete
+                  journey—from concept and design to fabrication and
+                  execution—giving you a holistic understanding of the industry.
+                </Text>
+
+                <Text as="li" mb={3} color="gray.700" fontSize="md">
+                  🏆 <b>Driven by Excellence:</b> Be part of a team that strives
+                  for quality, precision, and innovation in everything we do. We
+                  celebrate achievements and continuously aim higher.
+                </Text>
+
+                <Text as="li" color="gray.700" fontSize="md">
+                  💡 <b>Creative & Dynamic Environment:</b> No two days are the
+                  same. Work on diverse, challenging, and creative projects that
+                  keep you inspired and motivated.
+                </Text>
+              </Box>
+            </GridItem>
+
+            {/* Right Form */}
+            <GridItem>
+              <VStack spacing={4}>
+                <Input
+                  placeholder="Your Name"
+                  bg="white"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                />
+
+                <Input
+                  placeholder="Your Email"
+                  bg="white"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+
+                <Input
+                  placeholder="Enter position you are applying for"
+                  bg="white"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                />
+                <Box
+                  position="relative"
+                  border="1px solid"
+                  borderColor="gray.200"
+                  borderRadius="md"
+                  px={3}
+                  py={2}
+                  bg="white"
+                  _hover={{ borderColor: "gray.300" }}
+                  _focusWithin={{
+                    borderColor: "blue.500",
+                    boxShadow: "0 0 0 1px #3182ce",
+                  }}
+                  w={"100%"}
+                >
+                  <Input
+                    padding={"6px"}
+                    type="file"
+                    name="image"
+                    accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg"
+                    bg="white"
+                    ref={fileRef}
+                    border={"none"}
+                  />
+                  {/* Custom Button */}
+                  <Button
+                    onClick={() => fileRef.current.click()}
+                    onChange={handleImageUpload}
+                    bg="#efefef"
+                    p="5px"
+                    position="absolute"
+                    left="10px"
+                    top="49%"
+                    transform="translate(0%, -50%)"
+                    fontSize="12px"
+                    h="28px"
+                    border="1px solid #737171"
+                    borderRadius="3px"
+                  >
+                    Upload Resume
+                  </Button>
+                </Box>
+
+                <Textarea
+                  placeholder="Your Message"
+                  rows={5}
+                  bg="white"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                />
+
+                <Button
+                  variant="outline"
+                  borderColor="#c7a135"
+                  color="gray.800"
+                  px={8}
+                  onClick={handleSubmit}
+                  isDisabled={loading}
+                  _hover={{
+                    bg: "#c7a135",
+                    color: "white",
+                  }}
+                >
+                  {loading ? <Spinner size="sm" /> : "CONTACT NOW"}
+                </Button>
+              </VStack>
+            </GridItem>
+          </Grid>
         </Container>
       </Box>
       <Box py={{ base: 16, md: 24 }} bg="gray.50">
@@ -543,185 +735,6 @@ We are committed to building a workplace where every team member has the opportu
               </Box>
             </Box>
           </SimpleGrid>
-        </Container>
-      </Box>
-      <Box
-        py={{ base: 16, md: 24 }}
-        bg="linear-gradient(135deg,#f7f2e7 0%, #e9eef5 100%)"
-      >
-        <Container maxW="7xl">
-          <Grid
-            templateColumns={{ base: "1fr", md: "1fr 1fr" }}
-            gap={{ base: 10, md: 16 }}
-            alignItems="center"
-          >
-            {/* Left Content */}
-            <GridItem
-              display="flex"
-              flexDirection="column"
-              justifyContent="center"
-            >
-              <FadeHeading mb={6}>
-                Why{" "}
-                <Text as="span" color="var(--color-primary)">
-                  Join
-                </Text>{" "}
-                Us
-              </FadeHeading>
-
-              <Text fontWeight="500" mb={5} fontSize={"md"} color="gray.700">
-                Be a Part of Something Inspiring
-              </Text>
-
-              <Text color="black" mb={6} fontSize={"md"} lineHeight="1.6">
-                At FabriqExhibits, we believe that great work begins with great
-                people. Joining us means becoming part of a team that is
-                passionate about design, driven by excellence, and committed to
-                delivering impactful experiences across global platforms.
-              </Text>
-
-              {/* Compact List */}
-              <Box as="ul" pl={4} m={0} style={{ listStyleType: "none" }}>
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🌍 <b>Work on Global Projects:</b> Be involved in exciting projects
-                  across India and international markets. Gain exposure to
-                  diverse industries, global exhibitions, and large-scale design
-                  and build assignments.
-                </Text>
-
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🎯 <b>Make a Real Impact:</b> Your ideas and contributions
-                  matter. We empower our team to take ownership, innovate, and
-                  play a key role in shaping meaningful brand experiences.
-                </Text>
-
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  📈 <b>Grow with Us:</b> We are committed to your professional
-                  growth. From learning opportunities to hands-on project
-                  exposure, we help you build skills and advance your career.
-                </Text>
-
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🤝 <b>Collaborative Culture:</b> Work in an environment that
-                  values teamwork, open communication, and mutual respect. We
-                  believe the best results come from strong collaboration.
-                </Text>
-
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🛠️ <b>End-to-End Exposure:</b>Experience the complete
-                  journey—from concept and design to fabrication and
-                  execution—giving you a holistic understanding of the industry.
-                </Text>
-
-                <Text as="li" mb={3} color="gray.700" fontSize="md">
-                  🏆 <b>Driven by Excellence:</b> Be part of a team that strives
-                  for quality, precision, and innovation in everything we do. We
-                  celebrate achievements and continuously aim higher.
-                </Text>
-
-                <Text as="li" color="gray.700" fontSize="md">
-                  💡 <b>Creative & Dynamic Environment:</b> No two days are the
-                  same. Work on diverse, challenging, and creative projects that
-                  keep you inspired and motivated.
-                </Text>
-              </Box>
-            </GridItem>
-
-            {/* Right Form */}
-            <GridItem>
-              <VStack spacing={4}>
-                <Input
-                  placeholder="Your Name"
-                  bg="white"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                />
-
-                <Input
-                  placeholder="Your Email"
-                  bg="white"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                />
-
-                <Input
-                  placeholder="Enter position you are applying for"
-                  bg="white"
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                />
-                <Box
-                  position="relative"
-                  border="1px solid"
-                  borderColor="gray.200"
-                  borderRadius="md"
-                  px={3}
-                  py={2}
-                  bg="white"
-                  _hover={{ borderColor: "gray.300" }}
-                  _focusWithin={{
-                    borderColor: "blue.500",
-                    boxShadow: "0 0 0 1px #3182ce",
-                  }}
-                  w={"100%"}
-                >
-                  <Input
-                    padding={"6px"}
-                    type="file"
-                    name="image"
-                    accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg"
-                    bg="white"
-                    ref={fileRef}
-                    border={"none"}
-                  />
-                  {/* Custom Button */}
-                  <Button
-                    onClick={() => fileRef.current.click()}
-                    onChange={handleImageUpload}
-                    bg="#efefef"
-                    p="5px"
-                    position="absolute"
-                    left="10px"
-                    top="49%"
-                    transform="translate(0%, -50%)"
-                    fontSize="12px"
-                    h="28px"
-                    border="1px solid #737171"
-                    borderRadius="3px"
-                  >
-                    Upload Resume
-                  </Button>
-                </Box>
-
-                <Textarea
-                  placeholder="Your Message"
-                  rows={5}
-                  bg="white"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                />
-
-                <Button
-                  variant="outline"
-                  borderColor="#c7a135"
-                  color="gray.800"
-                  px={8}
-                  onClick={handleSubmit}
-                  isDisabled={loading}
-                  _hover={{
-                    bg: "#c7a135",
-                    color: "white",
-                  }}
-                >
-                  {loading ? <Spinner size="sm" /> : "CONTACT NOW"}
-                </Button>
-              </VStack>
-            </GridItem>
-          </Grid>
         </Container>
       </Box>
     </>

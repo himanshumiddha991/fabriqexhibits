@@ -6,6 +6,7 @@ import {
   ModalBody,
   Image,
   Box,
+  VStack,
   Text,
 } from "@chakra-ui/react";
 
@@ -24,7 +25,7 @@ const MediaModal = ({ isOpen, onClose, media, ShowTitle = true }) => {
           ) : (
             <video src={media.url} controls autoPlay />
           )}
-          {ShowTitle && (media?.title || media?.description) && (
+          {ShowTitle && (media?.title || media?.description || media?.alt) && (
             <Box position="absolute" bottom="0" w="100%" h="200px">
               <Box
                 bgGradient="linear(to-t, rgba(0,0,0,0.9), rgba(0,0,0,0))"
@@ -33,24 +34,21 @@ const MediaModal = ({ isOpen, onClose, media, ShowTitle = true }) => {
                 position="absolute"
               />
 
-              {/* Title */}
-              {media?.title && (
-                <Text
-                  position="absolute"
-                  bottom={media?.description ? "30px" : "0"} // 👈 dynamic
-                  m="10px"
-                  color="white"
-                >
-                  {media.title}
-                </Text>
-              )}
+              <Box
+                position="absolute"
+                bottom="0"
+                left="0"
+                m="10px"
+                color="white"
+              >
+                <VStack align="start" spacing={1}>
+                  {media?.title && <Text>{media.title}</Text>}
 
-              {/* Description */}
-              {media?.description && (
-                <Text position="absolute" bottom="0" m="10px" color="white">
-                  {media.description}
-                </Text>
-              )}
+                  {media?.description && <Text>{media.description}</Text>}
+
+                  {media?.alt && <Text>{media.alt}</Text>}
+                </VStack>
+              </Box>
             </Box>
           )}
         </ModalBody>

@@ -277,6 +277,7 @@ const ExihibitionStands = () => {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       description: item?.media?.description,
       title: item?.media?.title,
+      alt: item?.media?.alt,
     });
     onOpen();
   };

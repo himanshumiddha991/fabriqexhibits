@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   Box,
   Container,
@@ -33,6 +33,7 @@ import model_3 from "../images/model_3.png";
 import vector_4 from "../images/svg/Vector_4.svg";
 import vector_5 from "../images/svg/Vector_5.svg";
 import vector_6 from "../images/svg/Vector_6.svg";
+import api from "../utils/api";
 const Feature = ({ text }) => (
   <Flex align="start">
     <Icon
@@ -82,6 +83,7 @@ const Clients = () => {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       title: item?.media?.title,
       description: item?.media?.description,
+      alt: item?.media?.alt,
     });
     onOpen();
   };
@@ -97,6 +99,81 @@ const Clients = () => {
 
   // duplicate columns for infinite scroll
   const sliderColumns = [...columns, ...columns];
+
+  // logo images
+  const [mergedImages, setMergedImages] = useState([]);
+
+  const [duration, setDuration] = useState(45);
+  // ✅ fetch all pages (progressive loading)
+  const fetchAllGallery = async () => {
+    try {
+      let page = 1;
+      let totalPages = 1;
+      let allImages = [];
+
+      while (page <= totalPages) {
+        const res = await api.get(
+          `/api/gallary?tag=countries&page=${page}&limit=30`,
+        );
+        const { data, totalPages: tp } = res.data;
+
+        totalPages = tp;
+
+        const pageImages = data
+          .filter(
+            (item) =>
+              item?.media?.file_type === "image" &&
+              item?.tags?.toLowerCase().includes("countries"),
+          )
+          .map(
+            (img) =>
+              `${process.env.REACT_APP_API_URL}/${img?.media?.file_path}`,
+          );
+
+        allImages = [...allImages, ...pageImages];
+
+        page++;
+      }
+
+      // ✅ remove duplicates once
+      // const uniqueImages = [...new Set(allImages)];
+
+      // // ✅ shuffle once
+      // const shuffledImages = shuffleArray(uniqueImages);
+
+      // ✅ set state ONLY ONCE
+      setMergedImages(allImages);
+    } catch (err) {
+      console.error("Gallery fetch error:", err);
+    }
+  };
+
+  // ✅ initial load (ONLY API)
+  useEffect(() => {
+    fetchAllGallery();
+  }, []);
+
+  const scrollingLogos = useMemo(() => {
+    return [...mergedImages, ...mergedImages];
+  }, [mergedImages]);
+
+  const logoRows = useMemo(() => {
+    const rows = 5;
+    const chunkSize = Math.ceil(mergedImages.length / rows);
+
+    const result = [];
+
+    for (let i = 0; i < rows; i++) {
+      const chunk = mergedImages.slice(i * chunkSize, (i + 1) * chunkSize);
+
+      // duplicate for infinite scroll
+      result.push([...chunk, ...chunk]);
+    }
+
+    return result;
+  }, [mergedImages]);
+
+  console.log("mergedImages:", mergedImages.length, logoRows);
   return (
     <>
       <Banner heading="global Presence" BannerBg={BannerBg} />
@@ -315,16 +392,16 @@ const Clients = () => {
           ></Box>
           {/* Mobile → Only 1 row */}
           <Box display={{ base: "block", md: "none" }}>
-            <LogoRow />
+            <LogoRow images={logoRows[0]} />
           </Box>
 
           {/* Desktop → 5 rows */}
           <Box display={{ base: "none", md: "block" }}>
-            <LogoRow />
-            <LogoRow reverse />
-            <LogoRow />
-            <LogoRow reverse />
-            <LogoRow />
+            <LogoRow images={logoRows[0]} />
+            <LogoRow images={logoRows[1]} reverse />
+            <LogoRow images={logoRows[2]} />
+            <LogoRow images={logoRows[3]} reverse />
+            <LogoRow images={logoRows[4]} />
           </Box>
         </Container>
       </Box>

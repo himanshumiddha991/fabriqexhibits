@@ -21,7 +21,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../utils/api";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import MediaModal from "../../components/MediaModal";
-
+import { galleryCategories } from "../../utils/galleryCategories";
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -96,6 +96,7 @@ const Gallery = () => {
       url: `${process.env.REACT_APP_API_URL}/${item?.media?.file_path}`,
       title: item?.media?.title,
       description: item?.media?.description,
+      alt: item?.media?.alt,
     });
     onOpen();
   };
@@ -116,7 +117,7 @@ const Gallery = () => {
             }}
             w="250px"
           >
-            <option value="exhibition">Exhibition</option>
+            {/* <option value="exhibition">Exhibition</option>
             <option value="retail-interiors">Retail Interiors</option>
             <option value="theme-events">Theme Events</option>
             <option value="conferences-seminars">Conferences & Seminars</option>
@@ -124,7 +125,12 @@ const Gallery = () => {
             <option value="awards">Awards</option>
             <option value="portfolio">Portfolio</option>
             <option value="countries">Clients</option>
-            <option value="showcasing-stands">Showcasing Stands</option>
+            <option value="showcasing-stands">Showcasing Stands</option> */}
+            {galleryCategories.map((cat) => (
+              <option key={cat.value} value={cat.value}>
+                {cat.label}
+              </option>
+            ))}
           </Select>
 
           <Button colorScheme="blue" as={Link} to="/admin/gallary/create">

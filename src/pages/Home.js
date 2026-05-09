@@ -11,6 +11,8 @@ import Testimonial from "../components/Testimonial";
 import fr from "../images/fr.webp";
 import "../styles/home.css";
 import LogoRow from "../components/LogoRow";
+import api from "../utils/api";
+import { useMemo } from "react";
 import {
   Icon,
   Box,
@@ -394,7 +396,7 @@ const Home = () => {
     },
     {
       q: "Do you work on international projects?",
-      a: "Yes, we have executed multiple projects globally and have the capability to manage exhibition and interior projects across India and International markets",
+      a: "Yes, we have executed multiple projects globally and have the capability to manage exhibition and interior projects across India and International markets.",
     },
     {
       q: "How long have you been in the industry?",
@@ -402,7 +404,7 @@ const Home = () => {
     },
     {
       q: "Do you have manufacturing facilities?",
-      a: "Yes, we have factories in multiple parts of India (Delhi & Mumbai) and Dubai,, which helps us deliver quality execution and efficient project management.",
+      a: "Yes, we have factories in multiple parts of India (Delhi & Mumbai) and Dubai, which helps us deliver quality execution and efficient project management.",
     },
     {
       q: "What types of businesses do you work with?",
@@ -414,7 +416,7 @@ const Home = () => {
     },
     {
       q: "Do you create custom-designed stalls?",
-      a: "Yes, we specialize in custom stall design and fabrication tailored to each client’s brand, objectives, and event requirements.",
+      a: "Yes, we specialize in custom stall design and fabrication tailored to each client’s brand, objectives, and exhibition requirements.",
     },
     {
       q: "Do you also offer retail and office interior services?",
@@ -438,44 +440,95 @@ const Home = () => {
     },
     {
       q: "How can we get started with a project?",
-      a: "You can contact us with your brief, Exhibition details, and requirements. Our team will review your needs and propose the right design and execution approach.",
+      a: "You can contact us with your brief, exhibition details, and requirements. Our team will review your needs and propose the right design and execution approach.",
     },
   ];
   const steps = [
     {
       title: "Understand & Consult",
       icon: "💡",
-      desc: "We begin by understanding your brand, objectives, target audience, and exhibition requirements. What we cover: Event details & stall size Brand positioning & goals Budget and timelines Functional requirements",
+      desc: `
+      <p>We begin by understanding your brand, objectives, target audience, and exhibition requirements.</p>
+      <ul>
+        <li>Event details & stall size</li>
+        <li>Brand positioning & goals</li>
+        <li>Budget and timelines</li>
+        <li>Functional requirements</li>
+      </ul>
+    `,
     },
     {
       title: "Concept & Design",
       icon: "🎨",
-      desc: "Our design team transforms your brief into creative concepts and 3D visualizations. What we deliver: Concept ideas & layouts 3D designs & renders Material and finish suggestions",
+      desc: `
+      <p>Our design team transforms your brief into creative concepts and 3D visualizations.</p>
+      <ul>
+        <li>Concept ideas & layouts</li>
+        <li>3D designs & renders</li>
+        <li>Material and finish suggestions</li>
+      </ul>
+    `,
     },
     {
       title: "Planning & Approval",
       icon: "📝",
-      desc: "We finalize designs, technical drawings, and execution plans. Includes: Detailed working drawings Costing & timelines Client approvals Compliance with exhibition guidelines",
+      desc: `
+      <p>We finalize designs, technical drawings, and execution plans.</p>
+      <ul>
+        <li>Detailed working drawings</li>
+        <li>Costing & timelines</li>
+        <li>Client approvals</li>
+        <li>Compliance with exhibition guidelines</li>
+      </ul>
+    `,
     },
     {
       title: "Fabrication & Production",
       icon: "🏭",
-      desc: "With our in-house facilities across India and Dubai, we ensure high-quality fabrication. Focus areas: Material selection & quality checks Precision manufacturing Graphic production",
+      desc: `
+      <p>With our in-house facilities across India and Dubai, we ensure high-quality fabrication.</p>
+      <ul>
+        <li>Material selection & quality checks</li>
+        <li>Precision manufacturing</li>
+        <li>Graphic production</li>
+      </ul>
+    `,
     },
     {
       title: "Logistics & Installation",
       icon: "🌍",
-      desc: "We manage end-to-end logistics and on-site installation globally. What we handle: Transportation & coordination On-site assembly Supervision and finishing",
+      desc: `
+      <p>We manage end-to-end logistics and on-site installation globally.</p>
+      <ul>
+        <li>Transportation & coordination</li>
+        <li>On-site assembly</li>
+        <li>Supervision and finishing</li>
+      </ul>
+    `,
     },
     {
       title: "Handover & Support",
       icon: "🔍",
-      desc: "We ensure everything is perfect before the show begins. Includes: Final quality check Client walkthrough On-site support during the event",
+      desc: `
+      <p>We ensure everything is perfect before the show begins.</p>
+      <ul>
+        <li>Final quality check</li>
+        <li>Client walkthrough</li>
+        <li>On-site support during the event</li>
+      </ul>
+    `,
     },
     {
       title: "Dismantling & Closure",
       icon: "♻️",
-      desc: "Post-event, we handle safe dismantling and logistics.",
+      desc: `
+      <p>Post-event, we handle safe dismantling and logistics.</p>
+      <ul>
+        <li>Safe dismantling</li>
+        <li>Material handling</li>
+        <li>Logistics and closure</li>
+      </ul>
+    `,
     },
   ];
   const mid = Math.ceil(faqData.length / 2);
@@ -488,6 +541,62 @@ const Home = () => {
       md: [2, 5, 6],
       lg: [3, 6],
     }) || [];
+
+  // logo row
+
+  const [mergedImages, setMergedImages] = useState([]);
+  const fetchAllGallery = async () => {
+    try {
+      let page = 1;
+      let totalPages = 1;
+      let allImages = [];
+
+      while (page <= totalPages) {
+        const res = await api.get(
+          `/api/gallary?tag=countries&page=${page}&limit=30`,
+        );
+        const { data, totalPages: tp } = res.data;
+
+        totalPages = tp;
+
+        const pageImages = data
+          .filter(
+            (item) =>
+              item?.media?.file_type === "image" &&
+              item?.tags?.toLowerCase().includes("countries"),
+          )
+          .map(
+            (img) =>
+              `${process.env.REACT_APP_API_URL}/${img?.media?.file_path}`,
+          );
+
+        allImages = [...allImages, ...pageImages];
+
+        page++;
+      }
+
+      // ✅ remove duplicates once
+      // const uniqueImages = [...new Set(allImages)];
+
+      // // ✅ shuffle once
+      // const shuffledImages = shuffleArray(uniqueImages);
+
+      // ✅ set state ONLY ONCE
+      setMergedImages(allImages);
+    } catch (err) {
+      console.error("Gallery fetch error:", err);
+    }
+  };
+  const scrollingLogos = useMemo(() => {
+    return [...mergedImages, ...mergedImages];
+  }, [mergedImages]);
+  console.log("scrolling logos", scrollingLogos);
+
+  // ✅ initial load (ONLY API)
+  useEffect(() => {
+    fetchAllGallery();
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -749,7 +858,7 @@ const Home = () => {
           ))}
           
         </Box> */}
-        <LogoRow />
+        <LogoRow images={scrollingLogos} />
       </Box>
       {/* award Winning */}
       <Box py={12}>
@@ -1237,12 +1346,12 @@ const Home = () => {
                 boxShadow="0 10px 30px rgba(0,0,0,0.05)"
               >
                 <VStack align="start" spacing={5}>
-                  <Feature text="🌐 Global Presence – Delivering projects across international exhibitions" />
-                  <Feature text="🏭 Strong Infrastructure – Multiple factories across India and Dubai" />
-                  <Feature text="🎯 Design-Led Approach – Creative, strategic, and brand-focused" />
-                  <Feature text="🛠️ End-to-End Execution – Concept to completion under one roof" />
-                  <Feature text="🏅 Award-Winning Work – Recognized across global platforms" />
-                  <Feature text="🤝 Client Satisfaction First – Committed to delivering the best in a competitive world" />
+                  <Feature text="🌐 Global Presence – Delivering projects across international exhibitions." />
+                  <Feature text="🏭 Strong Infrastructure – Multiple factories across India and Dubai." />
+                  <Feature text="🎯 Design-Led Approach – Creative, strategic, and brand-focused." />
+                  <Feature text="🛠️ End-to-End Execution – Concept to completion under one roof." />
+                  <Feature text="🏅 Award-Winning Work – Recognized across global platforms." />
+                  <Feature text="🤝 Client Satisfaction First – Committed to delivering the best in a competitive world." />
                 </VStack>
               </Box>
             </Box>
@@ -1501,7 +1610,7 @@ const Home = () => {
                   <Box
                     key={index}
                     position="relative"
-                    w="200px"
+                    w="215px"
                     display="flex"
                     justifyContent="center"
                   >
@@ -1521,7 +1630,7 @@ const Home = () => {
                     <Box
                       w="260px"
                       h="300px"
-                      borderRadius="full"
+                      borderRadius={"10px"}
                       border="2px solid #ddd"
                       position="relative"
                       overflow="hidden"
@@ -1529,13 +1638,14 @@ const Home = () => {
                     >
                       {/* Top Content */}
                       <Flex
-                        h="80%"
-                        p={"0  10px"}
+                        h="85%"
+                        p={"5px  10px"}
                         align="center"
-                        justify="center"
+                        justify="start"
                         direction="column"
-                        textAlign="center"
+                        // textAlign="center"
                         gap={"10px"}
+                        className={`step-content`}
                       >
                         <Text fontSize="lg">{step.icon}</Text>
                         <Text fontSize={"14px"} fontWeight={"700"}>
@@ -1544,13 +1654,15 @@ const Home = () => {
                         </Text>
                         <Text fontSize="sm" fontWeight={"500"}>
                           {" "}
-                          {step.desc}
+                          <div
+                            dangerouslySetInnerHTML={{ __html: step.desc }}
+                          />
                         </Text>
                       </Flex>
 
                       {/* Bottom Gradient */}
                       <Flex
-                        h="25%"
+                        h="15%"
                         align="center"
                         justify="center"
                         bgGradient={

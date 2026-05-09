@@ -24,6 +24,7 @@ import project_2 from "../images/projects/project_2.jpeg";
 import project_3 from "../images/projects/project_3.jpeg";
 import project_4 from "../images/projects/project_4.jpeg";
 import api from "../utils/api";
+import "../styles/about.css";
 const ServiceDetail = () => {
   const { slug } = useParams();
   const [gallery, setGallery] = useState([]);
@@ -52,7 +53,8 @@ const ServiceDetail = () => {
       slidersubtitle:
         "FabriqExhibits delivers the best custom stall design and fabrication solutions, creating impactful, engaging exhibition spaces for brands globally.",
 
-      title: "Creating Exhibition Spaces That Stand Out",
+      title:
+        'Creating Exhibition Spaces That <span style="color: var(--color-primary)">Stand Out</span>',
       metaTitle: "Exhibition Stands Design & Build | Fabrig Exhibits",
       metaDescription:
         "Fabrig Exhibits helps you design and build exhibition stands. We offer simple, creative, and complete booth services for your business.",
@@ -68,8 +70,9 @@ const ServiceDetail = () => {
     <p>
       From concept development and 3D visualization to fabrication and on-site installation, we deliver<strong> turnkey exhibition solutions globally.</strong>
     </p>
-
+      
     <h3><strong>What We Offer:</strong></h3>
+    
     <ul>
       <li>Custom Exhibition Stall Design</li>
       <li>Modular & Custom Booth Fabrication</li>
@@ -79,7 +82,7 @@ const ServiceDetail = () => {
     </ul>
 
     <h3><strong>Why Choose Us:</strong></h3>
-    
+   
     <ul>
       <li>Innovative and functional designs</li>
       <li>Precision fabrication</li>
@@ -98,14 +101,15 @@ const ServiceDetail = () => {
       slidersubtitle:
         "We design functional and brand-oriented retail and office interiors that enhance customer experience and productivity.",
 
-      title: "Designing Spaces That Reflect Your Brand",
+      title:
+        'Designing <span style="color: var(--color-primary)">Spaces</span> That Reflect Your Brand',
       metaTitle: "Exhibition Stand Design & Build Services | Fabrig",
       metaDescription:
         "We design and build exhibition stands that help your brand stand out. Simple, creative, and complete booth solutions by Fabrig Exhibits.",
       tag: "retail-interiors",
       slides: [slide_3, project_1, project_2],
 
-      description: `<section class="interior-section">
+      description: `<section class="interior-section about-section">
   <div class="container">
 
    
@@ -122,7 +126,7 @@ We create modern, functional, and aesthetically driven retail and office environ
       <li>Custom Furniture & Fixtures</li>
     </ul>
 
-    <h2><strong>Our Approach:</strong></h2>
+    <h3><strong>Our Approach:</strong></h3>
 
     <p>
       We blend design, functionality, and brand identity to deliver spaces that are both visually appealing and highly practical.
@@ -138,7 +142,8 @@ We create modern, functional, and aesthetically driven retail and office environ
       slidersubtitle:
         "FabriqExhibits deliver high-impact graphics that command attention and leave a lasting impression on your audiences.",
 
-      title: "Visual Communication That Makes an Impact",
+      title:
+        'Visual <span style="color: var(--color-primary)">Communication</span> That Makes an Impact',
       metaTitle:
         "Creative Graphics Design Services | Exhibition & Brand Design Company India",
       metaDescription:
@@ -146,7 +151,7 @@ We create modern, functional, and aesthetically driven retail and office environ
       tag: "theme-events",
       slides: [project_3, project_4, slide_1],
 
-      description: `<section class="visual-section">
+      description: `<section class="visual-section about-section">
   <div class="container">
 
    
@@ -321,9 +326,12 @@ We create modern, functional, and aesthetically driven retail and office environ
       </Box>
       {/* Page Content */}
       <Box p="40px" w={{ base: "100%", md: "70%" }} mx="auto">
-        <Heading as="h1" mb={4} textAlign="center">
-          {service.title}
-        </Heading>
+        <Heading
+          as="h1"
+          mb={4}
+          textAlign="center"
+          dangerouslySetInnerHTML={{ __html: service.title }}
+        />
         <Box
           className="blog-description"
           mt={10}
