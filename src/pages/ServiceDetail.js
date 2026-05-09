@@ -64,13 +64,8 @@ const ServiceDetail = () => {
       description: `<section class="about-section">
   <div class="container">
     <p>
-      At <strong>FabriqExhibits</strong>, we specialize in designing and fabricating custom exhibition stalls that capture attention and communicate your brand effectively.
-    </p>
+      At FabriqExhibits, we specialize in designing and fabricating custom exhibition stalls that capture attention and communicate your brand effectively. from concept development and 3D visualization to fabrication and on-site installation, we deliver turnkey exhibition solutions globally.</p>
 
-    <p>
-      From concept development and 3D visualization to fabrication and on-site installation, we deliver<strong> turnkey exhibition solutions globally.</strong>
-    </p>
-      
     <h3><strong>What We <span style="color: var(--color-primary)">Offer:</span></strong></h3>
     
     <ul>
