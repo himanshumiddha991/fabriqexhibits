@@ -913,7 +913,7 @@ const Home = () => {
   
           </HStack> */}
           <MediaMosaic items={mediaItems} ShowTitle={true} tag={mediaTag} />
-          <Box display="flex" justifyContent={"center"} py={12}>
+          <Box display="flex" justifyContent={"center"} py={"10px"}>
             <Button
               sx={{
                 background: "var(--color-primary)",
@@ -1533,7 +1533,7 @@ const Home = () => {
         </Box>
       </Box>
       {/* process */}
-      <Box py={{ base: 12, md: 20 }} bg="var(--color-text-light)">
+      <Box py={{ base: 12, md: "3rem" }} bg="var(--color-text-light)">
         <Container maxW="5xl" position={"relative"}>
           <Box
             className="hero-dot"
@@ -1543,7 +1543,7 @@ const Home = () => {
             top={"0"}
           ></Box>
           {/* Heading Section */}
-          <VStack spacing={3} mb={14} textAlign="center">
+          <VStack spacing={3} mb={"1rem"} textAlign="center">
             <FadeHeading textAlign={"center"} letterSpacing="1px">
               Our{" "}
               <Text as="span" color="var(--color-primary)">
@@ -1629,7 +1629,7 @@ const Home = () => {
                     {/* Circle */}
                     <Box
                       w="260px"
-                      h="300px"
+                      h="340px"
                       borderRadius={"10px"}
                       border="2px solid #ddd"
                       position="relative"
@@ -1647,7 +1647,7 @@ const Home = () => {
                         gap={"10px"}
                         className={`step-content`}
                       >
-                        <Text fontSize="lg">{step.icon}</Text>
+                        <Text fontSize={"35px"}>{step.icon}</Text>
                         <Text fontSize={"14px"} fontWeight={"700"}>
                           {" "}
                           {step.title}

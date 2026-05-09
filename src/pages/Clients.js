@@ -177,6 +177,82 @@ const Clients = () => {
   return (
     <>
       <Banner heading="global Presence" BannerBg={BannerBg} />
+      {/* <Box bg="#f4f4f4" py={20}>
+        <Container maxW="7xl">
+          <Grid
+            templateColumns={{ base: "1fr", lg: "1.1fr 0.9fr" }}
+            gap={12}
+            alignItems="center"
+          >
+         
+            <Box>
+            
+              <Flex align="center" mb={6}>
+                <Box w="4px" h="40px" bg="var(--color-primary)" mr={4} />
+                <FadeHeading textAlign={"center"} letterSpacing="1px">
+                  Why Choose{" "}
+                  <Text as="span" color="var(--color-primary)">
+                    Us
+                  </Text>
+                </FadeHeading>
+              </Flex>
+
+            
+              <Text fontSize="lg" mb={8}>
+                <Text as="span" color="var(--color-primary)" fontWeight="bold">
+                  Fabriq Exhibits
+                </Text>{" "}
+                Choose us for our unwavering reliability for seamless,
+                world-class execution and total brand peace.
+              </Text>
+
+            
+              <Box
+                bg="white"
+                borderRadius="2xl"
+                p={8}
+                boxShadow="0 10px 30px rgba(0,0,0,0.05)"
+              >
+                <VStack align="start" spacing={5}>
+                  <Feature text="Deliver Projects Globally" />
+                  <Feature text="Possesses Strong Infrastructure " />
+                  <Feature text="Follow a Design-Led Approach " />
+                  <Feature text="Master in End-to-End Execution" />
+                  <Feature text="Recognized across global platforms " />
+                  <Feature text="Committed to delivering ONLY the best" />
+                </VStack>
+              </Box>
+            </Box>
+
+       
+            <Box position="relative">
+           
+              <Box
+                position="absolute"
+                top="-20px"
+                left="-20px"
+                right="-20px"
+                bottom="-20px"
+                bg="#eadede"
+                borderRadius="3xl"
+                zIndex="0"
+                transform={"rotate(-3deg)"}
+              />
+
+              <Image
+                src={fr}
+                borderRadius="3xl"
+                position="relative"
+                zIndex="1"
+                objectFit="cover"
+                w="100%"
+                h={{ base: "300px", md: "400px" }}
+              />
+            </Box>
+          </Grid>
+        </Container>
+      </Box> */}
+
       <Box bg="#f4f4f4" py={20}>
         <Container maxW="7xl">
           <Grid
@@ -200,10 +276,10 @@ const Clients = () => {
               {/* Intro */}
               <Text fontSize="lg" mb={8}>
                 <Text as="span" color="var(--color-primary)" fontWeight="bold">
-                  Fabriq Exhibits
+                  Choose us
                 </Text>{" "}
-                Choose us for our unwavering reliability for seamless,
-                world-class execution and total brand peace.
+                for our unwavering reliability for seamless, world-class
+                execution and total brand peace.
               </Text>
 
               {/* Features Card */}
@@ -214,12 +290,12 @@ const Clients = () => {
                 boxShadow="0 10px 30px rgba(0,0,0,0.05)"
               >
                 <VStack align="start" spacing={5}>
-                  <Feature text="Deliver Projects Globally" />
-                  <Feature text="Possesses Strong Infrastructure " />
-                  <Feature text="Follow a Design-Led Approach " />
-                  <Feature text="Master in End-to-End Execution" />
-                  <Feature text="Recognized across global platforms " />
-                  <Feature text="Committed to delivering ONLY the best" />
+                  <Feature text="🌐 Global Presence – Delivering projects across international exhibitions." />
+                  <Feature text="🏭 Strong Infrastructure – Multiple factories across India and Dubai." />
+                  <Feature text="🎯 Design-Led Approach – Creative, strategic, and brand-focused." />
+                  <Feature text="🛠️ End-to-End Execution – Concept to completion under one roof." />
+                  <Feature text="🏅 Award-Winning Work – Recognized across global platforms." />
+                  <Feature text="🤝 Client Satisfaction First – Committed to delivering the best in a competitive world." />
                 </VStack>
               </Box>
             </Box>

@@ -71,7 +71,7 @@ const ServiceDetail = () => {
       From concept development and 3D visualization to fabrication and on-site installation, we deliver<strong> turnkey exhibition solutions globally.</strong>
     </p>
       
-    <h3><strong>What We Offer:</strong></h3>
+    <h3><strong>What We <span style="color: var(--color-primary)">Offer:</span></strong></h3>
     
     <ul>
       <li>Custom Exhibition Stall Design</li>
@@ -81,7 +81,7 @@ const ServiceDetail = () => {
       <li>Global Installation & Dismantling</li>
     </ul>
 
-    <h3><strong>Why Choose Us:</strong></h3>
+    <h3><strong>Why <span style="color: var(--color-primary)">Choose</span> Us:</strong></h3>
    
     <ul>
       <li>Innovative and functional designs</li>
@@ -117,7 +117,7 @@ const ServiceDetail = () => {
     <p>
 We create modern, functional, and aesthetically driven retail and office environments that enhance customer experience and productivity.</p>
 
-    <h3><strong>Our Expertise:</strong></h3>
+    <h3><strong>Our <span style="color: var(--color-primary)">Expertise:</span></strong></h3>
     
     <ul>
       <li>Retail Store Design & Execution</li>
@@ -126,7 +126,7 @@ We create modern, functional, and aesthetically driven retail and office environ
       <li>Custom Furniture & Fixtures</li>
     </ul>
 
-    <h3><strong>Our Approach:</strong></h3>
+    <h3><strong>Our <span style="color: var(--color-primary)">Approach:</span></strong></h3>
 
     <p>
       We blend design, functionality, and brand identity to deliver spaces that are both visually appealing and highly practical.
@@ -160,7 +160,7 @@ We create modern, functional, and aesthetically driven retail and office environ
       Our graphic design solutions ensure your brand stands out visually across exhibitions, retail spaces, and marketing platforms.
     </p>
 
-    <h3><strong>Services Include: </strong></h3>
+    <h3><strong>Services <span style="color: var(--color-primary)">Include:</span> </strong></h3>
     <ul>
       <li>Exhibition Graphics & Branding</li>
       <li>Large Format Printing Designs</li>
@@ -168,7 +168,7 @@ We create modern, functional, and aesthetically driven retail and office environ
       <li>Marketing Collaterals</li>
     </ul>
 
-<h3><strong>What Sets Us Apart: </strong></h3>
+<h3><strong>What Sets Us <span style="color: var(--color-primary)">Apart:</span></strong></h3>
  <ul>
       <li>Strong design language aligned with brand identity</li>
       <li>High-quality, impactful visuals</li>
