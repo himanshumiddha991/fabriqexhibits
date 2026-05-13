@@ -19,7 +19,7 @@ import { FaUser, FaComments } from "react-icons/fa";
 import { MdArticle } from "react-icons/md";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
-import BannerBg from "../images/banner/5.jpg";
+import BannerBg from "../images/banner/5.webp";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const Blog = () => {

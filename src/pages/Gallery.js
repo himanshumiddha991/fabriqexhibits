@@ -15,7 +15,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import BannerBg from "../images/banner/2.jpg";
+import BannerBg from "../images/banner/2.webp";
 import MediaModal from "../components/MediaModal";
 import { galleryCategories } from "../utils/galleryCategories";
 const Gallery = () => {

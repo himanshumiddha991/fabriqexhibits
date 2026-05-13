@@ -25,7 +25,7 @@ import { useMemo } from "react";
 import LogoRow from "../components/LogoRow";
 import "../styles/clients.css";
 import Banner from "../components/Banner";
-import BannerBg from "../images/banner/4.jpg";
+import BannerBg from "../images/banner/4.webp";
 import model from "../images/projects/project_5.jpeg";
 import MediaModal from "../components/MediaModal";
 import model_2 from "../images/model_2.png";

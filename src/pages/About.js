@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import BannerBg from "../images/banner/1.jpg";
+import BannerBg from "../images/banner/1.webp";
 import {
   Box,
   Container,

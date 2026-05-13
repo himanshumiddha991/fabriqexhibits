@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Banner from "../components/Banner";
-import BannerBg from "../images/banner/3.jpg";
+import BannerBg from "../images/banner/3.webp";
 import model from "../images/projects/project_5.jpeg";
 import {
   SimpleGrid,

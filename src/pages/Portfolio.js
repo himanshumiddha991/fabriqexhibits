@@ -13,7 +13,7 @@ import {
   useDisclosure,
   Heading,
 } from "@chakra-ui/react";
-import BannerBg from "../images/banner/2.jpg";
+import BannerBg from "../images/banner/2.webp";
 import { Helmet } from "react-helmet-async";
 const Portfolio = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
