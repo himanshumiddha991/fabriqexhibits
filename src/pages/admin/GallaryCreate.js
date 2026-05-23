@@ -10,14 +10,20 @@ import {
   Spinner,
   Select,
   Text,
+  useToast,
 } from "@chakra-ui/react";
+
 import { galleryCategories } from "../../utils/galleryCategories";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../utils/api";
-
+import { useLocation } from "react-router-dom";
 const GallaryCreate = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const toast = useToast();
+  const location = useLocation();
+  const tag = location.state?.tag;
+  console.log("tag", tag);
 
   const [file, setFile] = useState(null);
   const [thumbnailFile, setThumbnailFile] = useState(null);
@@ -145,16 +151,32 @@ const GallaryCreate = () => {
       if (id && !file && thumbnailFile) {
         formData.append("thumbnail", thumbnailFile);
       }
-
+      let resp;
       if (id) {
-        await api.put(`/api/gallary/${id}`, formData);
-        alert("Gallery Updated Successfully");
+        resp = await api.put(`/api/gallary/${id}`, formData);
+        toast({
+          title: "Gallery Updated Successfully",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
+        setTimeout(() => {
+          window.location.href = `/admin/gallary/${id}`;
+        }, 2000);
+        // window.location.href = `/admin/gallary/${id}`;
       } else {
-        await api.post("/api/gallary", formData);
-        alert("Uploaded Successfully");
+        resp = await api.post("/api/gallary", formData);
+        toast({
+          title: "Gallery Uploaded Successfully",
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+        });
+        setTimeout(() => {
+          window.location.href = "/admin/gallary/create";
+        }, 2000);
       }
-
-      navigate("/admin/gallary");
+      // console.log("response", resp);
     } catch (error) {
       console.log(error);
       alert("Operation Failed");

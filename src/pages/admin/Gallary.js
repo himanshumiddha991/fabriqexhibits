@@ -191,9 +191,9 @@ const Gallery = () => {
 
                         <Flex direction="column" p="3" gap="2">
                           <Text fontWeight="600">
-                            {item?.tags === "countries"
-                              ? "clients"
-                              : item?.tags}
+                            {galleryCategories.find(
+                              (cat) => cat.value === item?.tags,
+                            )?.label || item?.tags}
                           </Text>
 
                           <Flex gap={3} pt={3}>
@@ -202,7 +202,9 @@ const Gallery = () => {
                               colorScheme="green"
                               onClick={(e) => {
                                 e.stopPropagation();
-                                navigate(`/admin/gallary/${item.id}`);
+                                navigate(`/admin/gallary/${item.id}`, {
+                                  state: { tag: tagFilter },
+                                });
                               }}
                               leftIcon={<FaEdit />}
                             >
